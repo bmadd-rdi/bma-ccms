@@ -1,0 +1,536 @@
+<!DOCTYPE html><html lang="th" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>บันทึกนำเข้าข้อมูลเรื่องร้องเรียน (Inbound Data Entry) - กทม.</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts: Inter & Sarabun for authentic Thai-English governmental clarity -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Sarabun:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "error": "#ba1a1a",
+            "on-primary-fixed": "#00164e",
+            "on-background": "#131b2e",
+            "on-error": "#ffffff",
+            "surface-bright": "#faf8ff",
+            "on-primary-fixed-variant": "#264191",
+            "on-tertiary-container": "#56b3f9",
+            "outline": "#757682",
+            "surface-tint": "#4059aa",
+            "tertiary": "#002d48",
+            "tertiary-fixed": "#cce5ff",
+            "on-tertiary-fixed-variant": "#004b73",
+            "on-secondary-fixed-variant": "#003ea8",
+            "secondary-fixed-dim": "#b4c5ff",
+            "surface-container-low": "#f2f3ff",
+            "on-surface-variant": "#444651",
+            "on-primary": "#ffffff",
+            "surface-variant": "#dae2fd",
+            "on-primary-container": "#90a8ff",
+            "inverse-on-surface": "#eef0ff",
+            "secondary-container": "#316bf3",
+            "on-secondary-container": "#fefcff",
+            "primary": "#00236f",
+            "primary-container": "#1e3a8a",
+            "on-secondary": "#ffffff",
+            "on-tertiary-fixed": "#001d31",
+            "surface-dim": "#d2d9f4",
+            "surface-container-high": "#e2e7ff",
+            "primary-fixed-dim": "#b6c4ff",
+            "secondary-fixed": "#dbe1ff",
+            "surface": "#faf8ff",
+            "outline-variant": "#c5c5d3",
+            "tertiary-container": "#004469",
+            "primary-fixed": "#dce1ff",
+            "background": "#faf8ff",
+            "secondary": "#0051d5",
+            "on-surface": "#131b2e",
+            "surface-container-highest": "#dae2fd",
+            "inverse-surface": "#283044",
+            "inverse-primary": "#b6c4ff",
+            "error-container": "#ffdad6",
+            "tertiary-fixed-dim": "#93ccff",
+            "on-tertiary": "#ffffff",
+            "on-secondary-fixed": "#00174b",
+            "on-error-container": "#93000a",
+            "surface-container": "#eaedff",
+            "surface-container-lowest": "#ffffff"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "space-xl": "2.5rem",
+            "space-sm": "0.5rem",
+            "gutter-desktop": "1.5rem",
+            "margin-tablet": "1.5rem",
+            "space-md": "1rem",
+            "margin": "1rem",
+            "margin-desktop": "2.5rem",
+            "gutter": "1rem",
+            "space-xs": "0.25rem",
+            "space-lg": "1.5rem"
+          },
+          "fontFamily": {
+            "headline-lg-mobile": ["Inter", "Sarabun", "sans-serif"],
+            "body-sm": ["Inter", "Sarabun", "sans-serif"],
+            "code-sm": ["Inter", "monospace"],
+            "headline-xl": ["Inter", "Sarabun", "sans-serif"],
+            "headline-lg": ["Inter", "Sarabun", "sans-serif"],
+            "body-lg": ["Inter", "Sarabun", "sans-serif"],
+            "body-md": ["Inter", "Sarabun", "sans-serif"],
+            "title-md": ["Inter", "Sarabun", "sans-serif"],
+            "headline-xl-mobile": ["Inter", "Sarabun", "sans-serif"],
+            "label-sm": ["Inter", "Sarabun", "sans-serif"],
+            "headline-md": ["Inter", "Sarabun", "sans-serif"],
+            "label-md": ["Inter", "Sarabun", "sans-serif"]
+          },
+          "fontSize": {
+            "headline-lg-mobile": ["22px", { "lineHeight": "30px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "body-sm": ["13px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "code-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }],
+            "headline-xl": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "body-lg": ["16px", { "lineHeight": "26px", "fontWeight": "400" }],
+            "body-md": ["14px", { "lineHeight": "22px", "fontWeight": "400" }],
+            "title-md": ["16px", { "lineHeight": "24px", "fontWeight": "600" }],
+            "headline-xl-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+            "headline-md": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "label-md": ["13px", { "lineHeight": "18px", "fontWeight": "500" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    body {
+      background-color: #F8F9FA;
+      font-family: 'Sarabun', 'Inter', sans-serif;
+    }
+    .custom-input {
+      background-color: #FFFFFF;
+      border: 1px solid #CBD5E1;
+      border-radius: 0.5rem;
+      color: #0F172A;
+      transition: all 0.15s ease-in-out;
+    }
+    .custom-input:focus {
+      border-color: #2563EB;
+      box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.15);
+      outline: none;
+    }
+    .custom-card {
+      background-color: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      border-radius: 0.75rem;
+      box-shadow: 0 1px 2px 0 rgba(15, 23, 42, 0.04);
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col text-on-surface antialiased bg-[#F8F9FA]">
+<!-- TopNavBar (Shared Component) -->
+<header class="bg-surface-container-lowest border-b border-outline-variant sticky top-0 z-50">
+<div class="flex justify-between items-center w-full px-margin-desktop max-w-7xl mx-auto h-16">
+<!-- Brand & Title -->
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-full bg-primary flex items-center justify-center text-white shadow-sm flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]" data-icon="account_balance">account_balance</span>
+</div>
+<div class="flex flex-col">
+<span class="text-title-md font-title-md text-primary tracking-tight font-bold">
+            ระบบติดตามเรื่องร้องเรียนของ กทม. (BMA Tracking System)
+          </span>
+<span class="text-label-sm font-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="inline-block w-2 h-2 rounded-full bg-emerald-500"></span>
+            กรุงเทพมหานคร Official Seal • เจ้าหน้าที่บันทึกข้อมูลส่วนกลาง
+          </span>
+</div>
+</div>
+<!-- Navigation Links (Web) -->
+<nav aria-label="Main Navigation" class="hidden md:flex items-center gap-6">
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-on-surface dark:hover:text-inverse-on-surface text-label-md font-label-md transition-colors duration-150" href="index.html">หน้าหลัก</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-on-surface dark:hover:text-inverse-on-surface text-label-md font-label-md transition-colors duration-150" href="search.html">ติดตามเรื่อง</a>
+<a class="text-primary dark:text-inverse-primary font-semibold border-b-2 border-primary dark:border-inverse-primary pb-1 text-label-md font-label-md transition-all duration-150 active:opacity-90" href="insert.html">บันทึกนำเข้า</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-on-surface dark:hover:text-inverse-on-surface text-label-md font-label-md transition-colors duration-150" href="api-ingest.html">ดึงข้อมูล API</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-on-surface dark:hover:text-inverse-on-surface text-label-md font-label-md transition-colors duration-150" href="update.html">อัปเดตสถานะ</a>
+</nav>
+<!-- Trailing Action Cluster -->
+<div class="flex items-center gap-3">
+<button class="px-2.5 py-1 text-label-sm font-label-sm rounded border border-outline-variant text-on-surface-variant hover:bg-surface-container-low transition-colors duration-150" type="button">
+          EN / TH
+        </button>
+<div class="h-4 w-[1px] bg-outline-variant hidden sm:block"></div>
+<div class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container-low text-primary text-label-md font-label-md font-semibold border border-outline-variant">
+<span class="material-symbols-outlined text-[18px] text-primary" data-icon="call">call</span>
+<span class="">ศูนย์บริการ 1555</span>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+<!-- Breadcrumb & Back Navigation -->
+<div class="mb-4">
+<a class="inline-flex items-center gap-1.5 text-label-md font-label-md text-on-surface-variant hover:text-primary transition-colors py-1 group" href="index.html">
+<span class="material-symbols-outlined text-[18px] transition-transform group-hover:-translate-x-0.5" data-icon="arrow_back">arrow_back</span>
+<span class="font-medium">← กลับหน้าติดตามเรื่อง</span>
+</a>
+</div>
+<!-- Header Bar -->
+<div class="mb-8 flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-gray-200 pb-5">
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="px-2 py-0.5 rounded text-xs font-semibold bg-blue-50 text-blue-700 border border-blue-200">
+            ระบบรับเรื่องสารบรรณกลาง
+          </span>
+<span class="text-xs text-gray-500 font-mono">BMA-OPS-FORM v2.4</span>
+</div>
+<h1 class="text-headline-lg font-headline-lg text-[#0F172A] tracking-tight">
+          บันทึกนำเข้าข้อมูลเรื่องร้องเรียน (Inbound Data Entry)
+        </h1>
+<p class="text-body-md font-body-md text-gray-600 mt-1">
+          สร้างคำร้องใหม่และออกรหัสติดตามเรื่องสำหรับประชาชนและหน่วยงานราชการ
+        </p>
+</div>
+<div class="flex items-center gap-2 text-sm text-gray-600 bg-white px-3 py-1.5 rounded-lg border border-gray-200 shadow-sm self-start md:self-auto">
+<span class="material-symbols-outlined text-[18px] text-emerald-600" data-icon="verified_user">verified_user</span>
+<span class="">ช่องทางปลอดภัย SSL 256-bit</span>
+</div>
+</div>
+<form class="space-y-6" onsubmit="event.preventDefault();">
+<!-- Form Section 1: ข้อมูลการรับเรื่อง (Inbound Metadata Card) -->
+<section class="custom-card p-6 md:p-8 bg-white transition-shadow">
+<!-- Card Header -->
+<div class="flex items-center gap-3 border-b border-gray-100 pb-4 mb-6">
+<div class="w-10 h-10 rounded-lg bg-blue-50 text-[#1E3A8A] flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]" data-icon="assignment">assignment</span>
+</div>
+<div>
+<h2 class="text-title-md font-title-md text-[#0F172A] font-bold">
+              ข้อมูลการรับเรื่อง (Inbound Details)
+            </h2>
+<p class="text-body-sm font-body-sm text-gray-500">
+              ระบุช่องทางการยื่นเรื่อง และข้อมูลเบื้องต้นเกี่ยวกับผู้ส่งคำร้อง
+            </p>
+</div>
+</div>
+<!-- 2-Column Responsive Layout -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-5">
+<!-- Field 1: ช่องทางการร้อง (Channel Type) * -->
+<div>
+<label class="block text-label-md font-label-md text-gray-800 mb-1.5" for="channel-type">
+              ช่องทางการร้อง (Channel Type) <span class="text-error font-bold">*</span>
+</label>
+<div class="relative">
+<select class="custom-input w-full px-3.5 py-2.5 text-body-md font-body-md appearance-none pr-10 cursor-pointer bg-white" id="channel-type"><option value="หนังสือ" selected="">หนังสือ</option><option value="traffy_fondue">Traffy Fondue</option><option value="walk_in">Walk-in (เดินทางมาด้วยตนเอง)</option><option value="phone_1555">โทรศัพท์ 1555 (ศูนย์รับเรื่องราวร้องทุกข์)</option><option value="bkkcomplaint">bkkcomplaint (เว็บไซต์ กทม.)</option><option value="email">Email</option><option value="postal">จดหมาย/ไปรษณีย์</option><option value="esaraban">หนังสือราชการ (e-Saraban)</option></select>
+<div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-gray-500">
+<span class="material-symbols-outlined text-[20px]" data-icon="expand_more">expand_more</span>
+</div>
+</div>
+<p class="mt-1 text-code-sm font-code-sm text-gray-500">ระบบจำแนกขั้นตอนการส่งต่อตามประเภทช่องทาง</p>
+</div>
+<!-- Field 2: ประเภทผู้ร้อง (Complainant Type) * -->
+<div>
+<label class="block text-label-md font-label-md text-gray-800 mb-1.5" for="complainant-type">
+              ประเภทผู้ร้อง (Complainant Type) <span class="text-error font-bold">*</span>
+</label>
+<div class="relative">
+<select class="custom-input w-full px-3.5 py-2.5 text-body-md font-body-md appearance-none pr-10 cursor-pointer bg-white" id="complainant-type">
+<option selected="" value="citizen">ประชาชน</option>
+<option value="bma_internal">หน่วยงานสังกัดกรุงเทพมหานคร</option>
+<option value="external_gov">หน่วยงานราชการอื่น/องค์กรอิสระ</option>
+<option value="private_sector">ภาคเอกชน</option>
+</select>
+<div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-gray-500">
+<span class="material-symbols-outlined text-[20px]" data-icon="expand_more">expand_more</span>
+</div>
+</div>
+<p class="mt-1 text-code-sm font-code-sm text-gray-500">มีผลต่อการจัดเก็บสถิติและสิทธิการเข้าถึงข้อมูลบุคคล</p>
+</div>
+<!-- Field 3: ประเภทผู้ร้องย่อย (Complainant Sub-type) -->
+<div>
+<label class="block text-label-md font-label-md text-gray-800 mb-1.5" for="complainant-subtype">
+              ประเภทผู้ร้องย่อย (Complainant Sub-type)
+            </label>
+<input class="custom-input w-full px-3.5 py-2.5 text-body-md font-body-md placeholder:text-gray-400" id="complainant-subtype" placeholder="ระบุผู้ร้องย่อย (เช่น ป.ป.ท., สำนักนายกฯ) หรือปล่อยว่าง" type="text">
+<p class="mt-1 text-code-sm font-code-sm text-gray-500">ใส่เฉพาะกรณีมีสังกัดหรือหน่วยงานส่งต่อเฉพาะเจาะจง</p>
+</div>
+<!-- Field 4: เรียน / ร้องต่อใคร (Recipient Target) * -->
+<div>
+<label class="block text-label-md font-label-md text-gray-800 mb-1.5" for="recipient-target">
+              เรียน / ร้องต่อใคร (Recipient Target) <span class="text-error font-bold">*</span>
+</label>
+<div class="relative">
+<select class="custom-input w-full px-3.5 py-2.5 text-body-md font-body-md appearance-none pr-10 cursor-pointer bg-white" id="recipient-target">
+<option selected="" value="governor">ผู้ว่าราชการกรุงเทพมหานคร</option>
+<option value="bma_org">กรุงเทพมหานคร</option>
+<option value="permanent_sec">ปลัดกรุงเทพมหานคร</option>
+</select>
+<div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-gray-500">
+<span class="material-symbols-outlined text-[20px]" data-icon="expand_more">expand_more</span>
+</div>
+</div>
+<p class="mt-1 text-code-sm font-code-sm text-gray-500">ผู้รับหนังสือตามระเบียบสารบรรณกรุงเทพมหานคร</p>
+</div>
+<!-- Field 5: เลขอ้างอิง (Reference ID / ref_id) -->
+<div class="col-span-1 md:col-span-2 border-t border-b border-gray-100 py-5 my-1 space-y-6" id="document-fields-container">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-indigo-50 text-[#1E3A8A] flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]" data-icon="draft">draft</span>
+</div>
+<div>
+<h3 class="text-title-md font-title-md text-[#0F172A] font-bold">
+ข้อมูลเอกสารหนังสือ (Document Info)
+</h3>
+<p class="text-body-sm font-body-sm text-gray-500">
+บันทึกข้อมูลหนังสือกำกับ เลขที่หนังสือ วันที่ และกำหนดชั้นความลับตามระเบียบงานสารบรรณ
+</p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-5">
+<div>
+<label class="block text-label-md font-label-md text-gray-800 mb-1.5" for="doc-number">
+เลขที่หนังสือ (Doc Number) <span class="text-error font-bold">*</span>
+</label>
+<div class="relative">
+<input class="custom-input w-full px-3.5 py-2.5 font-mono text-body-md" id="doc-number" placeholder="เช่น นร 0105/123 หรือ กทม. 5400/2941" type="text" value="กทม. 5400/2941">
+<div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none text-gray-400">
+<span class="material-symbols-outlined text-[18px]" data-icon="description">description</span>
+</div>
+</div>
+<p class="mt-1 text-code-sm font-code-sm text-gray-500">เลขทะเบียนหนังสือส่งจากหน่วยงานต้นทาง</p>
+</div>
+<div>
+<label class="block text-label-md font-label-md text-gray-800 mb-1.5" for="doc-date">
+วันที่หนังสือ (Doc Date) <span class="text-error font-bold">*</span>
+</label>
+<div class="relative">
+<input class="custom-input w-full px-3.5 py-2.5 text-body-md font-body-md pl-10" id="doc-date" type="text" value="12 ต.ค. 2567">
+<div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-gray-500">
+<span class="material-symbols-outlined text-[20px]" data-icon="event">event</span>
+</div>
+</div>
+<p class="mt-1 text-code-sm font-code-sm text-gray-500">วันที่ลงนามในหนังสือราชการ</p>
+</div>
+</div>
+<div>
+<label class="block text-label-md font-label-md text-gray-800 mb-2">
+ชั้นความลับ (Confidentiality Level) <span class="text-error font-bold">*</span>
+</label>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
+<label class="relative flex items-center justify-between p-3 rounded-lg border-2 border-primary bg-blue-50/50 cursor-pointer transition-all">
+<div class="flex items-center gap-2">
+<input checked="" class="h-4 w-4 text-[#1E3A8A] focus:ring-0" name="confidentiality" type="radio" value="normal">
+<span class="text-label-md font-label-md font-semibold text-[#00236F]">ปกติ (Normal)</span>
+</div>
+<span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+</label>
+<label class="relative flex items-center justify-between p-3 rounded-lg border border-gray-200 bg-white hover:bg-gray-50 cursor-pointer transition-all">
+<div class="flex items-center gap-2">
+<input class="h-4 w-4 text-[#1E3A8A] focus:ring-0" name="confidentiality" type="radio" value="confidential">
+<span class="text-label-md font-label-md text-gray-700">ลับ (Confidential)</span>
+</div>
+<span class="w-2 h-2 rounded-full bg-amber-400"></span>
+</label>
+<label class="relative flex items-center justify-between p-3 rounded-lg border border-gray-200 bg-white hover:bg-gray-50 cursor-pointer transition-all">
+<div class="flex items-center gap-2">
+<input class="h-4 w-4 text-[#1E3A8A] focus:ring-0" name="confidentiality" type="radio" value="secret">
+<span class="text-label-md font-label-md text-gray-700">ลับมาก (SECRET)</span>
+</div>
+<span class="w-2 h-2 rounded-full bg-orange-500"></span>
+</label>
+<label class="relative flex items-center justify-between p-3 rounded-lg border border-gray-200 bg-white hover:bg-gray-50 cursor-pointer transition-all">
+<div class="flex items-center gap-2">
+<input class="h-4 w-4 text-[#1E3A8A] focus:ring-0" name="confidentiality" type="radio" value="top_secret">
+<span class="text-label-md font-label-md text-gray-700">ลับที่สุด (TOP SECRET)</span>
+</div>
+<span class="w-2 h-2 rounded-full bg-rose-600"></span>
+</label>
+</div>
+<p class="mt-2 text-code-sm font-code-sm text-gray-500">การกำหนดชั้นความลับมีผลต่อการปิดบังชื่อผู้ร้องเรียนและเอกสารแนบในมุมมองสาธารณะ</p>
+</div>
+</div><div>
+<label class="block text-label-md font-label-md text-gray-800 mb-1.5" for="reference-id">
+              เลขอ้างอิง (Reference ID / ref_id)
+            </label>
+<div class="relative">
+<input class="custom-input w-full px-3.5 py-2.5 font-mono text-body-md placeholder:text-gray-400" id="reference-id" placeholder="เช่น TRF-2026-98765, REF-2024-88492" type="text">
+<div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none text-gray-400">
+<span class="material-symbols-outlined text-[18px]" data-icon="tag">tag</span>
+</div>
+</div>
+<p class="mt-1 text-code-sm font-code-sm text-gray-500">รหัสอ้างอิงเดิมจากช่องทางต้นทาง</p>
+</div>
+<!-- Field 6: วันที่-เวลารับเรื่อง (Received Date & Time) * -->
+<div>
+<label class="block text-label-md font-label-md text-gray-800 mb-1.5" for="received-datetime">
+              วันที่-เวลารับเรื่อง (Received Date &amp; Time) <span class="text-error font-bold">*</span>
+</label>
+<div class="relative">
+<input class="custom-input w-full px-3.5 py-2.5 text-body-md font-body-md pl-10" id="received-datetime" type="text" value="12 ต.ค. 2567, 14:30 น.">
+<div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-gray-500">
+<span class="material-symbols-outlined text-[20px]" data-icon="calendar_today">calendar_today</span>
+</div>
+</div>
+<p class="mt-1 text-code-sm font-code-sm text-gray-500">ระบุเวลาตามเวลาที่เจ้าหน้าที่เปิดรับคำร้องเข้าระบบ</p>
+</div>
+
+</div>
+</section>
+<!-- Form Section 2: ข้อมูลเอกสารหนังสือ (Document Info Card) -->
+<section class="custom-card p-6 md:p-8 bg-white transition-shadow">
+<div class="flex items-center gap-3 border-b border-gray-100 pb-4 mb-6">
+<div class="w-10 h-10 rounded-lg bg-blue-50 text-[#1E3A8A] flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]" data-icon="confirmation_number">confirmation_number</span>
+</div>
+<div>
+<h2 class="text-title-md font-title-md text-[#0F172A] font-bold">
+              การออกเลขรับเรื่อง (Inbound Numbering)
+            </h2>
+<p class="text-body-sm font-body-sm text-gray-500">
+              กำหนดวิธีการออกเลขและระบุเลขรับเรื่องประจำหน่วยงาน
+            </p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-5">
+<div>
+<label class="block text-label-md font-label-md text-gray-800 mb-1.5" for="inbound-id-method">
+              การออกเลข / วิธีการกำหนดเลขรับเรื่อง <span class="text-error font-bold">*</span>
+</label>
+<div class="relative">
+<select class="custom-input w-full px-3.5 py-2.5 text-body-md font-body-md appearance-none pr-10 cursor-pointer bg-white" id="inbound-id-method">
+<option selected="" value="manual">กรอกเลขรับเรื่องเอง (Manual Entry)</option>
+<option value="saraban_book">ออกเลขจากสมุดรับสารบรรณหน่วยงาน</option>
+<option value="pre_allocated">ใช้เลขที่จองไว้ล่วงหน้า (Pre-allocated)</option>
+</select>
+<div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-gray-500">
+<span class="material-symbols-outlined text-[20px]" data-icon="expand_more">expand_more</span>
+</div>
+</div>
+<p class="mt-1 text-code-sm font-code-sm text-gray-500">กำหนดตามวิธีการจัดเก็บของหน่วยงาน (ไม่ออกเลขอัตโนมัติ)</p>
+</div>
+<div>
+<label class="block text-label-md font-label-md text-gray-800 mb-1.5" for="inbound-ticket-id">
+              เลขรับเรื่อง (Inbound Ticket ID) <span class="text-error font-bold">*</span>
+</label>
+<div class="relative">
+<input class="custom-input w-full px-3.5 py-2.5 font-mono text-body-md font-semibold text-primary" id="inbound-ticket-id" placeholder="เช่น REC-69-00123 หรือ 5400/2567-089" type="text" value="REC-69-00123">
+<div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none text-gray-400">
+<span class="material-symbols-outlined text-[18px]" data-icon="pin">pin</span>
+</div>
+</div>
+<p class="mt-1 text-code-sm font-code-sm text-gray-500">กรอกเลขรับเรื่องตามสมุดลงรับหรือระบบสารบรรณประจำหน่วยงาน</p>
+</div>
+</div>
+</section>
+<!-- Bottom Actions & Info Bar -->
+<div class="space-y-4 pt-2">
+<!-- Summary Preview Box / Callout Alert -->
+<div class="rounded-xl border border-blue-200 bg-gradient-to-r from-blue-50/80 to-indigo-50/60 p-4 shadow-sm flex items-start gap-3"><div class="text-[#00236F] mt-0.5">
+<span class="material-symbols-outlined text-[22px]" data-icon="verified">verified</span>
+</div>
+<div class="flex-1">
+<div class="flex flex-wrap items-center gap-2">
+<span class="text-label-md font-label-md font-bold text-[#00236F]">
+  การตรวจสอบเลขรับเรื่องที่ระบุ:
+</span>
+<span class="font-mono text-sm px-2.5 py-0.5 bg-white text-[#00236F] font-semibold border border-blue-200 rounded tracking-wider shadow-2xs">
+  บันทึกตามเลขที่กรอก (ไม่ออกเลขอัตโนมัติ)
+</span>
+</div>
+<p class="text-body-sm font-body-sm text-gray-600 mt-1">
+  ระบบจะบันทึกข้อมูลคำร้องโดยใช้เลขรับเรื่องตามที่ท่านระบุ และส่งต่อข้อมูลไปยังหน่วยงานที่เกี่ยวข้องทันที
+</p>
+</div></div>
+<!-- Action Buttons -->
+<div class="flex flex-col-reverse sm:flex-row items-center justify-end gap-3 pt-2">
+<!-- Secondary Cancel Button -->
+<button class="w-full sm:w-auto px-6 py-2.5 bg-white hover:bg-[#F8F9FA] text-[#0F172A] border border-[#CBD5E1] rounded-lg text-label-md font-label-md font-medium transition-colors duration-150 text-center" type="button">
+            ยกเลิก (Cancel)
+          </button>
+<!-- Primary Save & Generate Inbound ID Button -->
+<button class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-2.5 bg-[#0B192C] hover:bg-[#1E293B] text-white rounded-lg text-label-md font-label-md font-semibold shadow-sm transition-all duration-150 active:scale-[0.99]" type="submit"><span class="material-symbols-outlined text-[20px]" data-icon="save">save</span>
+<span class="">บันทึกข้อมูลเรื่องร้องเรียน (Save Ticket)</span></button>
+</div>
+</div>
+</form>
+</main>
+<!-- Footer (Shared Component) -->
+<footer class="bg-surface-container-low border-t border-outline-variant mt-16">
+<div class="w-full py-space-xl px-margin-desktop max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-space-md">
+<!-- Copyright and Compliance text -->
+<div class="text-body-sm font-body-sm text-on-surface-variant text-center md:text-left max-w-3xl">
+<p class="leading-relaxed">
+          © 2567 กรุงเทพมหานคร (Bangkok Metropolitan Administration) • ระบบการจัดการเรื่องร้องทุกข์และความโปร่งใสภาครัฐ ปลอดภัยด้วยการเข้ารหัสข้อมูลตามมาตรฐานความมั่นคงปลอดภัยไซเบอร์
+        </p>
+</div>
+<!-- Footer Policy Links -->
+<div class="flex flex-wrap justify-center items-center gap-4 text-label-sm font-label-sm text-on-surface-variant">
+<a class="hover:text-primary transition-colors duration-150" href="#">นโยบายความเป็นส่วนตัว</a>
+<span class="text-gray-300">•</span>
+<a class="hover:text-primary transition-colors duration-150" href="#">ข้อกำหนดการใช้งาน</a>
+<span class="text-gray-300">•</span>
+<a class="hover:text-primary transition-colors duration-150" href="#">แผนผังเว็บไซต์</a>
+<span class="text-gray-300">•</span>
+<a class="hover:text-primary transition-colors duration-150" href="#">รายงานช่องโหว่ความปลอดภัย</a>
+</div>
+</div>
+</footer>
+<script>
+    // Micro-interaction: Toggle Document section
+    const toggleBtn = document.getElementById('doc-toggle');
+    const docFields = document.getElementById('document-fields-container');
+    let isDocActive = true;
+
+    if (toggleBtn && docFields) {
+      toggleBtn.addEventListener('click', () => {
+        isDocActive = !isDocActive;
+        const knob = toggleBtn.querySelector('span');
+        if (isDocActive) {
+          toggleBtn.classList.replace('bg-gray-300', 'bg-[#1E3A8A]');
+          knob.classList.replace('translate-x-0', 'translate-x-5');
+          docFields.classList.remove('opacity-40', 'pointer-events-none');
+        } else {
+          toggleBtn.classList.replace('bg-[#1E3A8A]', 'bg-gray-300');
+          knob.classList.replace('translate-x-5', 'translate-x-0');
+          docFields.classList.add('opacity-40', 'pointer-events-none');
+        }
+      });
+    }
+
+    // Micro-interaction for radio cards
+    const radioLabels = document.querySelectorAll('input[name="confidentiality"]');
+    radioLabels.forEach(radio => {
+      radio.addEventListener('change', () => {
+        radioLabels.forEach(r => {
+          const card = r.closest('label');
+          if (r.checked) {
+            card.classList.remove('border-gray-200', 'bg-white');
+            card.classList.add('border-2', 'border-primary', 'bg-blue-50/50');
+            card.querySelector('span').classList.add('font-semibold', 'text-[#00236F]');
+          } else {
+            card.classList.remove('border-2', 'border-primary', 'bg-blue-50/50');
+            card.classList.add('border', 'border-gray-200', 'bg-white');
+            card.querySelector('span').classList.remove('font-semibold', 'text-[#00236F]');
+            card.querySelector('span').classList.add('text-gray-700');
+          }
+        });
+      });
+    });
+  </script>
+
+
+</body></html>

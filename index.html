@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+
+<html lang="th"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>แดชบอร์ดสรุปผลการดำเนินงานและ SLA สำหรับผู้บริหาร - BMA Tracking System</title>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Inter & Prompt Google Fonts for Civic Precision -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Prompt:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration matching Design System -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "on-tertiary-fixed": "#001d31",
+            "surface-container-highest": "#dae2fd",
+            "error": "#ba1a1a",
+            "secondary-container": "#316bf3",
+            "on-primary-fixed-variant": "#264191",
+            "primary": "#00236f",
+            "tertiary-fixed-dim": "#93ccff",
+            "primary-fixed": "#dce1ff",
+            "background": "#faf8ff",
+            "on-secondary-container": "#fefcff",
+            "outline": "#757682",
+            "on-surface-variant": "#444651",
+            "tertiary-container": "#004469",
+            "surface-bright": "#faf8ff",
+            "on-tertiary-fixed-variant": "#004b73",
+            "primary-container": "#1e3a8a",
+            "surface-variant": "#dae2fd",
+            "on-error-container": "#93000a",
+            "surface-container-low": "#f2f3ff",
+            "surface-container-high": "#e2e7ff",
+            "on-tertiary-container": "#56b3f9",
+            "on-surface": "#131b2e",
+            "on-primary": "#ffffff",
+            "on-background": "#131b2e",
+            "primary-fixed-dim": "#b6c4ff",
+            "error-container": "#ffdad6",
+            "surface": "#faf8ff",
+            "on-primary-fixed": "#00164e",
+            "secondary-fixed-dim": "#b4c5ff",
+            "tertiary": "#002d48",
+            "on-error": "#ffffff",
+            "surface-container-lowest": "#ffffff",
+            "on-tertiary": "#ffffff",
+            "inverse-on-surface": "#eef0ff",
+            "surface-container": "#eaedff",
+            "tertiary-fixed": "#cce5ff",
+            "on-primary-container": "#90a8ff",
+            "on-secondary": "#ffffff",
+            "outline-variant": "#c5c5d3",
+            "inverse-primary": "#b6c4ff",
+            "on-secondary-fixed": "#00174b",
+            "secondary": "#0051d5",
+            "on-secondary-fixed-variant": "#003ea8",
+            "inverse-surface": "#283044",
+            "surface-dim": "#d2d9f4",
+            "secondary-fixed": "#dbe1ff",
+            "surface-tint": "#4059aa"
+          },
+          borderRadius: {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          spacing: {
+            "margin-desktop": "2.5rem",
+            "space-xs": "0.25rem",
+            "margin-tablet": "1.5rem",
+            "space-sm": "0.5rem",
+            "space-lg": "1.5rem",
+            "gutter-desktop": "1.5rem",
+            "space-md": "1rem",
+            "gutter": "1rem",
+            "space-xl": "2.5rem",
+            "margin": "1rem"
+          },
+          fontFamily: {
+            "headline-xl-mobile": ["Inter", "Prompt", "sans-serif"],
+            "label-md": ["Inter", "Prompt", "sans-serif"],
+            "code-sm": ["Inter", "monospace"],
+            "headline-lg-mobile": ["Inter", "Prompt", "sans-serif"],
+            "label-sm": ["Inter", "Prompt", "sans-serif"],
+            "headline-lg": ["Inter", "Prompt", "sans-serif"],
+            "headline-xl": ["Inter", "Prompt", "sans-serif"],
+            "body-lg": ["Inter", "Prompt", "sans-serif"],
+            "body-sm": ["Inter", "Prompt", "sans-serif"],
+            "title-md": ["Inter", "Prompt", "sans-serif"],
+            "body-md": ["Inter", "Prompt", "sans-serif"],
+            "headline-md": ["Inter", "Prompt", "sans-serif"]
+          },
+          fontSize: {
+            "headline-xl-mobile": ["28px", { lineHeight: "36px", letterSpacing: "-0.01em", fontWeight: "600" }],
+            "label-md": ["13px", { lineHeight: "18px", fontWeight: "500" }],
+            "code-sm": ["12px", { lineHeight: "16px", letterSpacing: "0.02em", fontWeight: "500" }],
+            "headline-lg-mobile": ["22px", { lineHeight: "30px", letterSpacing: "-0.01em", fontWeight: "600" }],
+            "label-sm": ["12px", { lineHeight: "16px", letterSpacing: "0.01em", fontWeight: "500" }],
+            "headline-lg": ["28px", { lineHeight: "36px", letterSpacing: "-0.02em", fontWeight: "600" }],
+            "headline-xl": ["36px", { lineHeight: "44px", letterSpacing: "-0.02em", fontWeight: "600" }],
+            "body-lg": ["16px", { lineHeight: "26px", fontWeight: "400" }],
+            "body-sm": ["13px", { lineHeight: "20px", fontWeight: "400" }],
+            "title-md": ["16px", { lineHeight: "24px", fontWeight: "600" }],
+            "body-md": ["14px", { lineHeight: "22px", fontWeight: "400" }],
+            "headline-md": ["20px", { lineHeight: "28px", letterSpacing: "-0.01em", fontWeight: "600" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    body {
+      font-family: 'Inter', 'Prompt', sans-serif;
+    }
+    .material-symbols-outlined {
+      font-family: 'Material Symbols Outlined';
+      font-weight: normal;
+      font-style: normal;
+      font-size: 20px;
+      line-height: 1;
+      letter-spacing: normal;
+      text-transform: none;
+      display: inline-block;
+      white-space: nowrap;
+      word-wrap: normal;
+      direction: ltr;
+      -webkit-font-feature-settings: 'liga';
+      -webkit-font-smoothing: antialiased;
+    }
+  </style>
+</head>
+<body class="bg-[#F8F9FA] text-[#0F172A] min-h-screen flex flex-col antialiased">
+<!-- TopNavBar (Shared Component from JSON) -->
+<header class="bg-surface-container-lowest dark:bg-inverse-surface border-b border-outline-variant dark:border-outline shadow-[0_1px_2px_0_rgba(15,23,42,0.04)] sticky top-0 z-50">
+<div class="flex justify-between items-center w-full px-margin-desktop max-w-7xl mx-auto h-16">
+<!-- Brand Logo & Official Title -->
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-[#1E3A8A] flex items-center justify-center text-white shrink-0 shadow-sm border border-white/20">
+<span class="material-symbols-outlined text-[24px]">account_balance</span>
+</div>
+<div class="flex flex-col">
+<span class="text-title-md font-title-md text-primary dark:text-inverse-primary leading-tight tracking-tight">
+            ระบบติดตามเรื่องร้องเรียนของ กทม. (BMA Tracking System)
+          </span>
+<span class="text-[11px] text-[#64748B] font-medium tracking-normal">
+            สำนักปลัดกรุงเทพมหานคร • ศูนย์รับเรื่องราวร้องทุกข์ 1555
+          </span>
+</div>
+</div>
+<!-- Navigation Links -->
+<nav aria-label="Main Navigation" class="hidden md:flex items-center gap-6">
+<a class="text-primary dark:text-inverse-primary font-semibold border-b-2 border-primary dark:border-inverse-primary pb-1 text-label-md font-label-md transition-all duration-150 active:opacity-90" href="index.html">หน้าหลัก</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-on-surface dark:hover:text-inverse-on-surface text-label-md font-label-md transition-colors duration-150" href="search.html">ติดตามเรื่อง</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-on-surface dark:hover:text-inverse-on-surface text-label-md font-label-md transition-colors duration-150" href="insert.html">บันทึกนำเข้า</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-on-surface dark:hover:text-inverse-on-surface text-label-md font-label-md transition-colors duration-150" href="api-ingest.html">ดึงข้อมูล API</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-on-surface dark:hover:text-inverse-on-surface text-label-md font-label-md transition-colors duration-150" href="update.html">อัปเดตสถานะ</a>
+</nav>
+<!-- Trailing Action Buttons -->
+<div class="flex items-center gap-3">
+<button class="px-2.5 py-1 text-label-sm font-label-sm text-[#475569] border border-[#CBD5E1] rounded hover:bg-slate-100 transition-colors">
+          EN / TH
+        </button>
+<button class="flex items-center gap-1.5 px-3.5 py-1.5 bg-[#1E3A8A] hover:bg-[#1E40AF] text-white text-label-sm font-label-sm rounded shadow-sm transition-all duration-150 active:opacity-90">
+<span class="material-symbols-outlined text-[16px]">call</span>
+<span>ศูนย์บริการ 1555</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Executive Content Canvas -->
+<main class="flex-1 w-full max-w-7xl mx-auto px-margin-desktop py-8 space-y-6">
+<!-- Page Header & Breadcrumb -->
+<div class="space-y-4">
+<div class="flex items-center gap-2">
+<a class="inline-flex items-center gap-1 text-body-sm font-body-sm text-[#475569] hover:text-[#1E3A8A] transition-colors group" href="index.html">
+<span class="material-symbols-outlined text-[16px] group-hover:-translate-x-0.5 transition-transform">arrow_back</span>
+<span>กลับหน้าหลัก</span>
+</a>
+<span class="text-[#CBD5E1]">/</span>
+<span class="text-body-sm font-body-sm text-[#64748B]">ภาพรวมผู้บริหารและดัชนีชี้วัด</span>
+</div>
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+<div>
+<div class="flex items-center gap-2.5">
+<h1 class="text-headline-lg font-headline-lg text-[#0F172A] tracking-tight">
+              แดชบอร์ดสรุปผลการดำเนินงานและ SLA สำหรับผู้บริหาร (Executive SLA &amp; Performance Dashboard)
+            </h1>
+<span class="px-2.5 py-0.5 rounded-full bg-[#EFF6FF] border border-[#BFDBFE] text-[#1E3A8A] text-label-sm font-label-sm font-semibold">
+              ระดับบริหาร
+            </span>
+</div>
+<p class="text-body-md font-body-md text-[#475569] mt-1 max-w-4xl">
+            รายงานวิเคราะห์ภาพรวมการจัดการเรื่องร้องทุกข์ อัตราความสำเร็จ และการปฏิบัติตามมาตรฐานเวลา SLA ของหน่วยงานกรุงเทพมหานคร
+          </p>
+</div>
+<div class="flex items-center gap-2 shrink-0">
+<button class="inline-flex items-center gap-2 px-3.5 py-2 bg-white border border-[#CBD5E1] text-[#0F172A] rounded-xl text-label-md font-label-md hover:bg-[#F8F9FA] transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[18px] text-[#475569]">print</span>
+<span>พิมพ์รายงานสรุป (Print Executive PDF)</span>
+</button>
+<button class="inline-flex items-center gap-2 px-3.5 py-2 bg-[#1E3A8A] hover:bg-[#1E40AF] text-white rounded-xl text-label-md font-label-md shadow-sm transition-colors">
+<span class="material-symbols-outlined text-[18px]">download</span>
+<span>Export Data (Excel/CSV)</span>
+</button>
+</div>
+</div>
+<!-- Top Bar Filters Row Container -->
+<div class="bg-white border border-[#E2E8F0] rounded-xl p-4 shadow-[0_1px_2px_0_rgba(15,23,42,0.04)] flex flex-wrap items-center justify-between gap-4">
+<div class="flex flex-wrap items-center gap-3">
+<!-- Fiscal Year Selector -->
+<div class="relative">
+<label class="sr-only">ปีงบประมาณ</label>
+<div class="flex items-center border border-[#CBD5E1] rounded-lg bg-white px-3 py-1.5 gap-2 text-label-md font-label-md hover:border-[#94A3B8] transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-[18px] text-[#64748B]">calendar_month</span>
+<span class="text-[#0F172A] font-medium">ปีงบประมาณ: พ.ศ. 2567</span>
+<span class="material-symbols-outlined text-[16px] text-[#64748B]">arrow_drop_down</span>
+</div>
+</div>
+<!-- Month/Date Range Selector -->
+<div class="relative">
+<label class="sr-only">ช่วงเวลา</label>
+<div class="flex items-center border border-[#CBD5E1] rounded-lg bg-white px-3 py-1.5 gap-2 text-label-md font-label-md hover:border-[#94A3B8] transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-[18px] text-[#64748B]">date_range</span>
+<span class="text-[#0F172A] font-medium">ช่วงเวลา: 1 ต.ค. 2566 - ปัจจุบัน (Q1-Q4)</span>
+<span class="material-symbols-outlined text-[16px] text-[#64748B]">arrow_drop_down</span>
+</div>
+</div>
+<!-- Agency Filter -->
+<div class="relative">
+<label class="sr-only">สังกัดหน่วยงาน</label>
+<div class="flex items-center border border-[#CBD5E1] rounded-lg bg-white px-3 py-1.5 gap-2 text-label-md font-label-md hover:border-[#94A3B8] transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-[18px] text-[#64748B]">corporate_fare</span>
+<span class="text-[#0F172A] font-medium">สังกัดหน่วยงาน: ทั้งหมด (50 เขต และ 16 สำนัก)</span>
+<span class="material-symbols-outlined text-[16px] text-[#64748B]">arrow_drop_down</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-2 text-code-sm font-code-sm text-[#64748B]">
+<span class="inline-block w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+<span>ข้อมูลเรียลไทม์: 28 มี.ค. 2567, 14:30 น.</span>
+</div>
+</div>
+</div>
+<!-- Section 1: Executive KPI Cards (4-Column Responsive Grid) -->
+<section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+<!-- KPI 1: Ingested -->
+<div class="bg-white border border-[#E2E8F0] rounded-xl p-5 shadow-[0_1px_2px_0_rgba(15,23,42,0.04)] hover:border-[#94A3B8] transition-colors">
+<div class="flex items-center justify-between">
+<span class="text-label-md font-label-md text-[#475569]">เรื่องทั้งหมดในระบบ (Total Inbound)</span>
+<div class="w-8 h-8 rounded-lg bg-[#EFF6FF] text-[#1E3A8A] flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">inventory_2</span>
+</div>
+</div>
+<div class="mt-3 flex items-baseline gap-2">
+<span class="text-[32px] font-bold text-[#0B192C] tracking-tight leading-none">12,485</span>
+<span class="text-body-md font-body-md text-[#64748B]">เรื่อง</span>
+</div>
+<div class="mt-3 flex items-center gap-1.5">
+<span class="inline-flex items-center gap-0.5 px-2 py-0.5 rounded text-[11px] font-medium bg-[#ECFDF5] text-[#065F46]">
+<span class="material-symbols-outlined text-[14px]">trending_up</span>
+            +14.2%
+          </span>
+<span class="text-body-sm font-body-sm text-[#64748B]">เทียบปีงบประมาณก่อนหน้า</span>
+</div>
+</div>
+<!-- KPI 2: Resolved -->
+<div class="bg-white border border-[#E2E8F0] rounded-xl p-5 shadow-[0_1px_2px_0_rgba(15,23,42,0.04)] hover:border-[#94A3B8] transition-colors">
+<div class="flex items-center justify-between">
+<span class="text-label-md font-label-md text-[#475569]">ดำเนินการเสร็จสิ้น (Resolved)</span>
+<div class="w-8 h-8 rounded-lg bg-[#ECFDF5] text-[#059669] flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">check_circle</span>
+</div>
+</div>
+<div class="mt-3 flex items-baseline gap-2">
+<span class="text-[32px] font-bold text-[#15803D] tracking-tight leading-none">11,200</span>
+<span class="text-body-md font-body-md text-[#64748B]">เรื่อง</span>
+</div>
+<div class="mt-3 flex items-center gap-1.5">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[11px] font-medium bg-[#ECFDF5] text-[#065F46]">
+<span class="material-symbols-outlined text-[14px]">done_all</span>
+            89.7%
+          </span>
+<span class="text-body-sm font-body-sm text-[#64748B]">ของเรื่องทั้งหมดที่รับเข้ามา</span>
+</div>
+</div>
+<!-- KPI 3: In Progress -->
+<div class="bg-white border border-[#E2E8F0] rounded-xl p-5 shadow-[0_1px_2px_0_rgba(15,23,42,0.04)] hover:border-[#94A3B8] transition-colors">
+<div class="flex items-center justify-between">
+<span class="text-label-md font-label-md text-[#475569]">อยู่ระหว่างดำเนินการ (In Progress)</span>
+<div class="w-8 h-8 rounded-lg bg-[#F0F9FF] text-[#0284C7] flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">pending_actions</span>
+</div>
+</div>
+<div class="mt-3 flex items-baseline gap-2">
+<span class="text-[32px] font-bold text-[#1D4ED8] tracking-tight leading-none">1,035</span>
+<span class="text-body-md font-body-md text-[#64748B]">เรื่อง</span>
+</div>
+<div class="mt-3 flex items-center gap-1.5">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[11px] font-medium bg-[#F0F9FF] text-[#075985]">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+            8.3%
+          </span>
+<span class="text-body-sm font-body-sm text-[#64748B]">กระจายงานตามพื้นที่เขต</span>
+</div>
+</div>
+<!-- KPI 4: Overdue -->
+<div class="bg-white border border-[#E2E8F0] rounded-xl p-5 shadow-[0_1px_2px_0_rgba(15,23,42,0.04)] hover:border-[#94A3B8] transition-colors">
+<div class="flex items-center justify-between">
+<span class="text-label-md font-label-md text-[#475569]">เกินกำหนดเวลา SLA (Overdue)</span>
+<div class="w-8 h-8 rounded-lg bg-[#FEF2F2] text-[#DC2626] flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">warning</span>
+</div>
+</div>
+<div class="mt-3 flex items-baseline gap-2">
+<span class="text-[32px] font-bold text-[#DC2626] tracking-tight leading-none">250</span>
+<span class="text-body-md font-body-md text-[#64748B]">เรื่อง</span>
+</div>
+<div class="mt-3 flex items-center gap-1.5">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[11px] font-medium bg-[#FEF2F2] text-[#991B1B]">
+<span class="material-symbols-outlined text-[14px]">priority_high</span>
+            2.0%
+          </span>
+<span class="text-body-sm font-body-sm text-[#991B1B] font-medium">ต้องเร่งรัดติดตามเร่งด่วน ⚠️</span>
+</div>
+</div>
+</section>
+<!-- Section 2: SLA Performance Overview Banner (Hero Card with clean grid layout) -->
+<section class="bg-white border border-[#E2E8F0] rounded-xl p-6 shadow-[0_1px_2px_0_rgba(15,23,42,0.04)]">
+<div class="flex flex-col md:flex-row md:items-center justify-between pb-5 border-b border-[#E2E8F0] gap-2">
+<div>
+<h2 class="text-title-md font-title-md text-[#0F172A] flex items-center gap-2">
+<span class="material-symbols-outlined text-[#1E3A8A]">speed</span>
+            ดัชนีชี้วัดประสิทธิภาพเวลามาตรฐาน SLA (SLA Performance Benchmark)
+          </h2>
+<p class="text-body-sm font-body-sm text-[#64748B] mt-0.5">
+            เป้าหมายเกณฑ์มาตรฐาน กทม. ไม่ต่ำกว่า 85.0% ภายในระยะเวลาเฉลี่ยไม่เกิน 3 วันทำการ
+          </p>
+</div>
+<div class="inline-flex items-center gap-1.5 px-3 py-1 bg-[#ECFDF5] border border-[#A7F3D0] rounded-full text-[#065F46] text-label-sm font-label-sm">
+<span class="w-2 h-2 rounded-full bg-[#10B981]"></span>
+<span>🟢 ผ่านเกณฑ์มาตรฐานภาพรวม (Exceeding Target)</span>
+</div>
+</div>
+<!-- 3 Pillars Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-6">
+<!-- Pillar 1: Overall SLA Compliance Rate -->
+<div class="space-y-3 bg-[#F8FAFC] border border-[#E2E8F0] p-4 rounded-xl">
+<div class="flex justify-between items-center text-label-md font-label-md text-[#475569]">
+<span>อัตราปฏิบัติตามเกณฑ์ SLA รวม</span>
+<span class="text-emerald-700 font-semibold">+4.7% เหนือเป้าหมาย</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="text-[36px] font-bold text-[#0F172A] leading-none tracking-tight">89.7%</span>
+<span class="text-body-sm font-body-sm text-[#64748B]">จากเป้าหมาย 85.0%</span>
+</div>
+<!-- Sleek Progress Bar with 85% Target Line -->
+<div class="space-y-1.5 pt-1">
+<div class="relative w-full h-3 bg-[#E2E8F0] rounded-full overflow-hidden">
+<div class="h-full bg-[#10B981] rounded-full" style="width: 89.7%;"></div>
+</div>
+<div class="flex justify-between items-center text-[11px] text-[#64748B]">
+<span>0%</span>
+<span class="font-medium text-[#1E3A8A]">เกณฑ์เป้าหมาย 85%</span>
+<span>100%</span>
+</div>
+</div>
+<div class="text-body-sm font-body-sm text-[#475569] pt-1">
+            อัตราการดำเนินการแล้วเสร็จตามกำหนดเวลาของกรุงเทพมหานคร สูงกว่าปีที่ผ่านมา 3.1%
+          </div>
+</div>
+<!-- Pillar 2: Mean Time to Resolution (MTTR) -->
+<div class="space-y-3 bg-[#F8FAFC] border border-[#E2E8F0] p-4 rounded-xl">
+<div class="flex justify-between items-center text-label-md font-label-md text-[#475569]">
+<span>เวลาเฉลี่ยในการปิดเคส (MTTR)</span>
+<span class="text-[#059669] font-medium">เร็วขึ้น 1.4 วัน</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="text-[36px] font-bold text-[#0F172A] leading-none tracking-tight">2.4</span>
+<span class="text-headline-md font-headline-md text-[#475569]">วัน / เรื่อง</span>
+</div>
+<div class="space-y-1 pt-1 text-body-sm font-body-sm text-[#475569]">
+<p>เวลาเฉลี่ยในการปิดเคส (ลดลงจาก 3.8 วัน ในปี 2566)</p>
+<div class="flex items-center gap-1.5 text-body-sm font-body-sm text-[#1E3A8A] font-medium pt-1">
+<span class="material-symbols-outlined text-[16px]">bolt</span>
+<span>ความเร็วเฉลี่ยในการส่งต่อเรื่องแรก: 45 นาที</span>
+</div>
+</div>
+<div class="w-full bg-[#E2E8F0] h-1.5 rounded-full overflow-hidden">
+<div class="bg-[#2563EB] h-full rounded-full" style="width: 75%;"></div>
+</div>
+</div>
+<!-- Pillar 3: Fast Resolution Rate (< 24 Hours) -->
+<div class="space-y-3 bg-[#F8FAFC] border border-[#E2E8F0] p-4 rounded-xl">
+<div class="flex justify-between items-center text-label-md font-label-md text-[#475569]">
+<span>อัตราแก้ไขเสร็จสิ้น &lt; 24 ชม.</span>
+<span class="px-2 py-0.5 bg-[#FEF3C7] text-[#92400E] rounded text-[11px] font-medium">⚡ Fast-Track</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="text-[36px] font-bold text-[#0F172A] leading-none tracking-tight">72.0%</span>
+<span class="text-body-sm font-body-sm text-[#64748B]">(8,064 เรื่อง)</span>
+</div>
+<p class="text-body-sm font-body-sm text-[#475569] pt-1">
+            แก้ไขปัญหาเสร็จสิ้นภายใน 24 ชั่วโมงแรกหลังรับเรื่อง ส่วนใหญ่เป็นเคสด้านไฟฟ้าส่องสว่างและสิ่งปฏิกูล
+          </p>
+<div class="flex items-center gap-2 pt-1">
+<div class="w-full bg-[#E2E8F0] h-2 rounded-full overflow-hidden">
+<div class="bg-[#0284C7] h-full rounded-full" style="width: 72%;"></div>
+</div>
+<span class="text-code-sm font-code-sm text-[#0F172A] font-semibold">72%</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 3: Department SLA Performance Table -->
+<section class="bg-white border border-[#E2E8F0] rounded-xl shadow-[0_1px_2px_0_rgba(15,23,42,0.04)] overflow-hidden">
+<!-- Table Header Bar -->
+<div class="p-6 border-b border-[#E2E8F0]">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div>
+<h2 class="text-title-md font-title-md text-[#0F172A] flex items-center gap-2">
+<span class="material-symbols-outlined text-[#1E3A8A]">leaderboard</span>
+              ตารางเปรียบเทียบประสิทธิภาพรายหน่วยงานและสำนักงานเขต (Department SLA Performance Ranking)
+            </h2>
+<p class="text-body-sm font-body-sm text-[#64748B] mt-0.5">
+              จัดอันดับตามอัตราการแก้ไขปัญหาตามกรอบเวลามาตรฐาน SLA เรียงจากประสิทธิภาพสูงสุด
+            </p>
+</div>
+<!-- Quick Filters & Search -->
+<div class="flex flex-wrap items-center gap-3">
+<div class="relative w-64">
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-[18px] text-[#64748B]">search</span>
+<input class="w-full pl-9 pr-3 py-1.5 text-body-sm font-body-sm bg-white border border-[#CBD5E1] rounded-lg focus:outline-none focus:border-[#2563EB] focus:ring-2 focus:ring-[#2563EB]/15 text-[#0F172A] placeholder-[#94A3B8]" placeholder="ค้นหาชื่อเขตหรือสำนัก..." type="text"/>
+</div>
+<div class="inline-flex rounded-lg border border-[#E2E8F0] p-0.5 bg-[#F8FAFC]">
+<button class="px-3 py-1 text-label-sm font-label-sm rounded-md bg-white text-[#1E3A8A] font-semibold shadow-xs">ทั้งหมด</button>
+<button class="px-3 py-1 text-label-sm font-label-sm rounded-md text-[#64748B] hover:text-[#0F172A]">เฉพาะเกินกำหนด</button>
+<button class="px-3 py-1 text-label-sm font-label-sm rounded-md text-[#64748B] hover:text-[#0F172A]">ผ่านเกณฑ์ 95% ขึ้นไป</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Responsive Table View -->
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-[#F8FAFC] border-b border-[#E2E8F0] text-label-sm font-label-sm text-[#475569]">
+<th class="py-3 px-4 font-semibold">อันดับ &amp; หน่วยงาน / ส่วนราชการ</th>
+<th class="py-3 px-4 font-semibold text-right">เรื่องที่ได้รับ</th>
+<th class="py-3 px-4 font-semibold text-right">ดำเนินการเสร็จสิ้น</th>
+<th class="py-3 px-4 font-semibold text-right">กำลังดำเนินการ</th>
+<th class="py-3 px-4 font-semibold text-right">เกินกำหนดเวลา (Overdue)</th>
+<th class="py-3 px-4 font-semibold text-right">เวลาเฉลี่ย (MTTR)</th>
+<th class="py-3 px-4 font-semibold text-center">อัตราการผ่าน SLA</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-[#E2E8F0] text-body-sm font-body-sm text-[#0F172A]">
+<!-- Row 1: คลองเตย -->
+<tr class="hover:bg-[#F8FAFC] transition-colors">
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-3">
+<span class="w-6 h-6 rounded-full bg-slate-100 text-[#475569] text-code-sm font-code-sm flex items-center justify-center font-bold">1</span>
+<div>
+<div class="font-medium text-[#0F172A]">สำนักงานเขตคลองเตย</div>
+<div class="text-[11px] text-[#64748B]">กลุ่มเขตกรุงเทพใต้</div>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4 text-right font-medium">1,420</td>
+<td class="py-3.5 px-4 text-right text-emerald-700">1,320</td>
+<td class="py-3.5 px-4 text-right text-blue-700">85</td>
+<td class="py-3.5 px-4 text-right">
+<span class="px-2 py-0.5 rounded text-code-sm font-code-sm bg-red-50 text-red-700 border border-red-200 font-semibold">15</span>
+</td>
+<td class="py-3.5 px-4 text-right font-medium text-[#475569]">1.8 วัน</td>
+<td class="py-3.5 px-4 text-center">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-label-sm font-label-sm bg-[#FFFBEB] text-[#92400E] border border-[#FDE68A]">
+<span class="w-1.5 h-1.5 rounded-full bg-[#F59E0B]"></span>
+                  93.0% [🟡 ปกติ]
+                </span>
+</td>
+</tr>
+<!-- Row 2: ระบายน้ำ -->
+<tr class="hover:bg-[#F8FAFC] transition-colors">
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-3">
+<span class="w-6 h-6 rounded-full bg-slate-100 text-[#475569] text-code-sm font-code-sm flex items-center justify-center font-bold">2</span>
+<div>
+<div class="font-medium text-[#0F172A]">สำนักการระบายน้ำ</div>
+<div class="text-[11px] text-[#64748B]">สำนักส่วนกลาง กทม.</div>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4 text-right font-medium">2,150</td>
+<td class="py-3.5 px-4 text-right text-emerald-700">2,042</td>
+<td class="py-3.5 px-4 text-right text-blue-700">90</td>
+<td class="py-3.5 px-4 text-right">
+<span class="px-2 py-0.5 rounded text-code-sm font-code-sm bg-red-50 text-red-700 border border-red-200 font-semibold">18</span>
+</td>
+<td class="py-3.5 px-4 text-right font-medium text-[#475569]">1.4 วัน</td>
+<td class="py-3.5 px-4 text-center">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-label-sm font-label-sm bg-[#ECFDF5] text-[#065F46] border border-[#A7F3D0]">
+<span class="w-1.5 h-1.5 rounded-full bg-[#10B981]"></span>
+                  95.0% [🟢 ดีเยี่ยม]
+                </span>
+</td>
+</tr>
+<!-- Row 3: จตุจักร -->
+<tr class="hover:bg-[#F8FAFC] transition-colors">
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-3">
+<span class="w-6 h-6 rounded-full bg-slate-100 text-[#475569] text-code-sm font-code-sm flex items-center justify-center font-bold">3</span>
+<div>
+<div class="font-medium text-[#0F172A]">สำนักงานเขตจตุจักร</div>
+<div class="text-[11px] text-[#64748B]">กลุ่มเขตกรุงเทพเหนือ</div>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4 text-right font-medium">1,890</td>
+<td class="py-3.5 px-4 text-right text-emerald-700">1,720</td>
+<td class="py-3.5 px-4 text-right text-blue-700">140</td>
+<td class="py-3.5 px-4 text-right">
+<span class="px-2 py-0.5 rounded text-code-sm font-code-sm bg-red-50 text-red-700 border border-red-200 font-semibold">30</span>
+</td>
+<td class="py-3.5 px-4 text-right font-medium text-[#475569]">2.1 วัน</td>
+<td class="py-3.5 px-4 text-center">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-label-sm font-label-sm bg-[#FFFBEB] text-[#92400E] border border-[#FDE68A]">
+<span class="w-1.5 h-1.5 rounded-full bg-[#F59E0B]"></span>
+                  91.0% [🟡 ปกติ]
+                </span>
+</td>
+</tr>
+<!-- Row 4: โยธา (Alert) -->
+<tr class="bg-red-50/30 hover:bg-red-50/60 transition-colors">
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-3">
+<span class="w-6 h-6 rounded-full bg-red-100 text-red-700 text-code-sm font-code-sm flex items-center justify-center font-bold">4</span>
+<div>
+<div class="font-medium text-[#0F172A]">สำนักการโยธา</div>
+<div class="text-[11px] text-red-600 font-medium">อัตราคั่งค้างสูงกว่าเกณฑ์เฉลี่ย</div>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4 text-right font-medium">1,650</td>
+<td class="py-3.5 px-4 text-right text-emerald-700">1,420</td>
+<td class="py-3.5 px-4 text-right text-blue-700">170</td>
+<td class="py-3.5 px-4 text-right">
+<span class="px-2 py-0.5 rounded text-code-sm font-code-sm bg-red-600 text-white font-bold">60</span>
+</td>
+<td class="py-3.5 px-4 text-right font-medium text-red-700 font-semibold">3.5 วัน</td>
+<td class="py-3.5 px-4 text-center">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-label-sm font-label-sm bg-[#FEF2F2] text-[#991B1B] border border-[#FCA5A5] font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-[#EF4444]"></span>
+                  86.1% [🚨 ต้องปรับปรุง]
+                </span>
+</td>
+</tr>
+<!-- Row 5: บางรัก -->
+<tr class="hover:bg-[#F8FAFC] transition-colors">
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-3">
+<span class="w-6 h-6 rounded-full bg-slate-100 text-[#475569] text-code-sm font-code-sm flex items-center justify-center font-bold">5</span>
+<div>
+<div class="font-medium text-[#0F172A]">สำนักงานเขตบางรัก</div>
+<div class="text-[11px] text-[#64748B]">กลุ่มเขตกรุงเทพใต้</div>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4 text-right font-medium">980</td>
+<td class="py-3.5 px-4 text-right text-emerald-700">945</td>
+<td class="py-3.5 px-4 text-right text-blue-700">30</td>
+<td class="py-3.5 px-4 text-right">
+<span class="px-2 py-0.5 rounded text-code-sm font-code-sm bg-red-50 text-red-600 border border-red-200">5</span>
+</td>
+<td class="py-3.5 px-4 text-right font-medium text-[#475569]">1.2 วัน</td>
+<td class="py-3.5 px-4 text-center">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-label-sm font-label-sm bg-[#ECFDF5] text-[#065F46] border border-[#A7F3D0]">
+<span class="w-1.5 h-1.5 rounded-full bg-[#10B981]"></span>
+                  96.4% [🟢 ดีเยี่ยม]
+                </span>
+</td>
+</tr>
+<!-- Row 6: เทศกิจ -->
+<tr class="hover:bg-[#F8FAFC] transition-colors">
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-3">
+<span class="w-6 h-6 rounded-full bg-slate-100 text-[#475569] text-code-sm font-code-sm flex items-center justify-center font-bold">6</span>
+<div>
+<div class="font-medium text-[#0F172A]">สำนักเทศกิจ</div>
+<div class="text-[11px] text-[#64748B]">สำนักส่วนกลาง กทม.</div>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4 text-right font-medium">1,120</td>
+<td class="py-3.5 px-4 text-right text-emerald-700">1,060</td>
+<td class="py-3.5 px-4 text-right text-blue-700">48</td>
+<td class="py-3.5 px-4 text-right">
+<span class="px-2 py-0.5 rounded text-code-sm font-code-sm bg-red-50 text-red-700 border border-red-200 font-semibold">12</span>
+</td>
+<td class="py-3.5 px-4 text-right font-medium text-[#475569]">1.9 วัน</td>
+<td class="py-3.5 px-4 text-center">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-label-sm font-label-sm bg-[#FFFBEB] text-[#92400E] border border-[#FDE68A]">
+<span class="w-1.5 h-1.5 rounded-full bg-[#F59E0B]"></span>
+                  94.6% [🟡 ปกติ]
+                </span>
+</td>
+</tr>
+<!-- Row 7: พระนคร -->
+<tr class="hover:bg-[#F8FAFC] transition-colors">
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-3">
+<span class="w-6 h-6 rounded-full bg-slate-100 text-[#475569] text-code-sm font-code-sm flex items-center justify-center font-bold">7</span>
+<div>
+<div class="font-medium text-[#0F172A]">สำนักงานเขตพระนคร</div>
+<div class="text-[11px] text-[#64748B]">กลุ่มเขตกรุงเทพกลาง</div>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4 text-right font-medium">850</td>
+<td class="py-3.5 px-4 text-right text-emerald-700">815</td>
+<td class="py-3.5 px-4 text-right text-blue-700">28</td>
+<td class="py-3.5 px-4 text-right">
+<span class="px-2 py-0.5 rounded text-code-sm font-code-sm bg-red-50 text-red-700 border border-red-200 font-semibold">7</span>
+</td>
+<td class="py-3.5 px-4 text-right font-medium text-[#475569]">1.5 วัน</td>
+<td class="py-3.5 px-4 text-center">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-label-sm font-label-sm bg-[#ECFDF5] text-[#065F46] border border-[#A7F3D0]">
+<span class="w-1.5 h-1.5 rounded-full bg-[#10B981]"></span>
+                  95.9% [🟢 ดีเยี่ยม]
+                </span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination & Table Footer -->
+<div class="p-4 bg-[#F8FAFC] border-t border-[#E2E8F0] flex flex-col sm:flex-row items-center justify-between gap-3 text-body-sm font-body-sm text-[#64748B]">
+<div>
+          แสดง 7 จาก 66 หน่วยงานสังกัด กทม.
+        </div>
+<div class="flex items-center gap-2">
+<button class="px-3 py-1.5 rounded border border-[#CBD5E1] bg-white text-[#475569] hover:bg-slate-50 transition-colors text-label-sm font-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">file_download</span>
+            ดาวน์โหลดรายงานตาราง
+          </button>
+<button class="px-3 py-1.5 rounded bg-[#1E3A8A] text-white hover:bg-[#1E40AF] transition-colors text-label-sm font-label-sm font-medium">
+            ดูทั้งหมด (66 หน่วยงาน)
+          </button>
+</div>
+</div>
+</section>
+<!-- Section 4: Executive Insights & Breakdown Charts (2-Column Grid) -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Left Card: Ingestion Channels Breakdown -->
+<div class="bg-white border border-[#E2E8F0] rounded-xl p-6 shadow-[0_1px_2px_0_rgba(15,23,42,0.04)] space-y-5">
+<div class="flex items-center justify-between pb-3 border-b border-[#E2E8F0]">
+<div>
+<h3 class="text-title-md font-title-md text-[#0F172A] flex items-center gap-2">
+<span class="material-symbols-outlined text-[#1E3A8A]">cell_tower</span>
+              แหล่งที่มาของข้อมูลเรื่องร้องทุกข์ (Ingestion Channels Breakdown)
+            </h3>
+<p class="text-body-sm font-body-sm text-[#64748B] mt-0.5">จำแนกตามช่องทางที่ประชาชนและส่วนราชการแจ้งเรื่อง</p>
+</div>
+<span class="px-2 py-0.5 bg-blue-50 text-[#1E3A8A] rounded text-[11px] font-semibold">Q1-Q4</span>
+</div>
+<div class="space-y-4">
+<!-- Item 1: Traffy Fondue -->
+<div class="space-y-1.5">
+<div class="flex justify-between items-center text-body-sm font-body-sm">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-[#2563EB]"></span>
+<span class="font-medium text-[#0F172A]">Traffy Fondue (LINE Bot &amp; Mobile App)</span>
+</div>
+<div class="text-right">
+<span class="font-semibold text-[#0F172A]">8,320 เรื่อง</span>
+<span class="text-[#64748B] text-label-sm font-label-sm ml-1">(66.6%)</span>
+</div>
+</div>
+<div class="w-full bg-[#E2E8F0] h-2.5 rounded-full overflow-hidden">
+<div class="bg-[#2563EB] h-full rounded-full" style="width: 66.6%;"></div>
+</div>
+</div>
+<!-- Item 2: e-Saraban -->
+<div class="space-y-1.5">
+<div class="flex justify-between items-center text-body-sm font-body-sm">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-[#4F46E5]"></span>
+<span class="font-medium text-[#0F172A]">e-Saraban (หนังสือราชการ / เอกสารทางการ)</span>
+</div>
+<div class="text-right">
+<span class="font-semibold text-[#0F172A]">2,145 เรื่อง</span>
+<span class="text-[#64748B] text-label-sm font-label-sm ml-1">(17.2%)</span>
+</div>
+</div>
+<div class="w-full bg-[#E2E8F0] h-2.5 rounded-full overflow-hidden">
+<div class="bg-[#4F46E5] h-full rounded-full" style="width: 17.2%;"></div>
+</div>
+</div>
+<!-- Item 3: GBS Complaints Web Portal -->
+<div class="space-y-1.5">
+<div class="flex justify-between items-center text-body-sm font-body-sm">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-[#0D9488]"></span>
+<span class="font-medium text-[#0F172A]">GBS Complaints (Web Portal ศบก. 1555)</span>
+</div>
+<div class="text-right">
+<span class="font-semibold text-[#0F172A]">2,020 เรื่อง</span>
+<span class="text-[#64748B] text-label-sm font-label-sm ml-1">(16.2%)</span>
+</div>
+</div>
+<div class="w-full bg-[#E2E8F0] h-2.5 rounded-full overflow-hidden">
+<div class="bg-[#0D9488] h-full rounded-full" style="width: 16.2%;"></div>
+</div>
+</div>
+</div>
+<!-- Summary Note Box -->
+<div class="p-3 bg-[#F0F9FF] border border-[#BAE6FD] rounded-lg flex items-start gap-2.5">
+<span class="material-symbols-outlined text-[20px] text-[#0284C7] shrink-0 mt-0.5">info</span>
+<p class="text-body-sm font-body-sm text-[#0369A1]">
+<span class="font-semibold">ข้อสังเกตบริหาร:</span> Traffy Fondue เป็นช่องทางหลักที่ประชาชนเข้าถึงสูงสุด โดยมีเวลาตอบสนองรวดเร็วที่สุดเฉลี่ย 1.9 วัน ซึ่งดีกว่าช่องทางเอกสารหนังสือราชการ 42%
+          </p>
+</div>
+</div>
+<!-- Right Card: Case Confidentiality Breakdown -->
+<div class="bg-white border border-[#E2E8F0] rounded-xl p-6 shadow-[0_1px_2px_0_rgba(15,23,42,0.04)] space-y-5">
+<div class="flex items-center justify-between pb-3 border-b border-[#E2E8F0]">
+<div>
+<h3 class="text-title-md font-title-md text-[#0F172A] flex items-center gap-2">
+<span class="material-symbols-outlined text-[#1E3A8A]">lock</span>
+              ระดับชั้นความลับและความคุ้มครองข้อมูล (Case Confidentiality Breakdown)
+            </h3>
+<p class="text-body-sm font-body-sm text-[#64748B] mt-0.5">มาตรการควบคุมข้อมูลตามมาตรฐานความมั่นคงปลอดภัยภาครัฐ</p>
+</div>
+<span class="px-2 py-0.5 bg-emerald-50 text-emerald-800 rounded text-[11px] font-semibold">PDPA Standard</span>
+</div>
+<div class="space-y-4">
+<!-- Item 1: General Public -->
+<div class="space-y-1.5">
+<div class="flex justify-between items-center text-body-sm font-body-sm">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-[#10B981]"></span>
+<span class="font-medium text-[#0F172A]">เรื่องทั่วไป / ไม่ระบุชั้นความลับ (General Public)</span>
+</div>
+<div class="text-right">
+<span class="font-semibold text-[#0F172A]">11,486 เรื่อง</span>
+<span class="text-[#64748B] text-label-sm font-label-sm ml-1">(92.0%)</span>
+</div>
+</div>
+<div class="w-full bg-[#E2E8F0] h-2.5 rounded-full overflow-hidden">
+<div class="bg-[#10B981] h-full rounded-full" style="width: 92.0%;"></div>
+</div>
+</div>
+<!-- Item 2: Confidential / Sensitive -->
+<div class="space-y-1.5">
+<div class="flex justify-between items-center text-body-sm font-body-sm">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-[#F59E0B]"></span>
+<span class="font-medium text-[#0F172A]">เรื่องลับราชการ / คุ้มครองข้อมูลบุคคล (Confidential)</span>
+</div>
+<div class="text-right">
+<span class="font-semibold text-[#0F172A]">999 เรื่อง</span>
+<span class="text-[#64748B] text-label-sm font-label-sm ml-1">(8.0%)</span>
+</div>
+</div>
+<div class="w-full bg-[#E2E8F0] h-2.5 rounded-full overflow-hidden">
+<div class="bg-[#F59E0B] h-full rounded-full" style="width: 8.0%;"></div>
+</div>
+</div>
+</div>
+<!-- Security & Compliance badge box -->
+<div class="p-3.5 bg-[#F8FAFC] border border-[#CBD5E1] rounded-lg space-y-2">
+<div class="flex items-center gap-2 text-label-sm font-label-sm font-semibold text-[#1E3A8A]">
+<span class="material-symbols-outlined text-[18px]">verified_user</span>
+<span>ความมั่นคงปลอดภัยและการควบคุมสิทธิ์</span>
+</div>
+<p class="text-body-sm font-body-sm text-[#475569] leading-relaxed">
+            🛡️ ดำเนินการตามระเบียบสารบรรณอิเล็กทรอนิกส์และ พ.ร.บ. คุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562 (PDPA) อย่างเคร่งครัด เรื่องที่มีชั้นความลับสามารถเข้าถึงได้เฉพาะหัวหน้าฝ่ายและผู้อำนวยการเขตที่ได้รับอนุญาตเท่านั้น
+          </p>
+</div>
+</div>
+</section>
+</main>
+<!-- Official Footer (Shared Component from JSON) -->
+<footer class="bg-surface-container-low dark:bg-inverse-surface border-t border-outline-variant dark:border-outline mt-12">
+<div class="w-full py-space-xl px-margin-desktop max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-space-md">
+<!-- Footer Copyright Text -->
+<div class="text-center md:text-left space-y-1">
+<p class="text-body-sm font-body-sm text-on-surface-variant dark:text-outline-variant leading-relaxed">
+          © 2567 กรุงเทพมหานคร (Bangkok Metropolitan Administration) • ระบบการจัดการเรื่องร้องทุกข์และความโปร่งใสภาครัฐ ปลอดภัยด้วยการเข้ารหัสข้อมูลตามมาตรฐานความมั่นคงปลอดภัยไซเบอร์
+        </p>
+<p class="text-[11px] text-[#64748B]">
+          ศูนย์เทคโนโลยีสารสนเทศ กรุงเทพมหานคร • ศูนย์รับเรื่องราวร้องทุกข์ 1555 (เปิดบริการ 24 ชั่วโมง)
+        </p>
+</div>
+<!-- Footer Policy Links -->
+<div class="flex flex-wrap items-center justify-center gap-4 shrink-0">
+<a class="text-label-sm font-label-sm text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-inverse-primary transition-colors duration-150" href="#">
+          นโยบายความเป็นส่วนตัว
+        </a>
+<span class="text-[#CBD5E1]">|</span>
+<a class="text-label-sm font-label-sm text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-inverse-primary transition-colors duration-150" href="#">
+          ข้อกำหนดการใช้งาน
+        </a>
+<span class="text-[#CBD5E1]">|</span>
+<a class="text-label-sm font-label-sm text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-inverse-primary transition-colors duration-150" href="#">
+          แผนผังเว็บไซต์
+        </a>
+<span class="text-[#CBD5E1]">|</span>
+<a class="text-label-sm font-label-sm text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-inverse-primary transition-colors duration-150" href="#">
+          รายงานช่องโหว่ความปลอดภัย
+        </a>
+</div>
+</div>
+</footer>
+</body></html>
