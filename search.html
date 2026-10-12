@@ -234,26 +234,386 @@
 <!-- Column 2: ข้อมูลหนังสือกำกับและเอกสารราชการ (Document & Official Details) -->
 </div>
 <!-- Section 4: Vertical Routing Timeline (แสดงเส้นทางว่าเรื่องอยู่ที่ไหน) -->
-<div class="bg-surface-container-lowest rounded-xl border border-[#E2E8F0] p-6 sm:p-7 shadow-[0_1px_2px_0_rgba(15,23,42,0.04)]">
-<div class="flex flex-col sm:flex-row sm:items-center justify-between pb-6 border-b border-[#E2E8F0] mb-6 gap-2">
-<div>
-<h2 class="text-headline-md font-headline-md text-on-surface flex items-center gap-2">
-<span class="material-symbols-outlined text-primary text-[22px]" data-icon="route">route</span>
-            เส้นทางการเดินทางของเรื่อง (Routing Workflow)
-          </h2>
-<p class="text-on-surface-variant font-body-sm text-body-sm mt-0.5">
-            ติดตามสถานะและหน่วยงานผู้รับผิดชอบตามวงจรการแก้ปัญหาภาครัฐ
-          </p>
-</div>
-<div class="inline-flex items-center gap-1 text-label-sm font-label-sm text-outline">
-<span class="material-symbols-outlined text-[16px]" data-icon="schedule">schedule</span>
-          เวลามาตรฐาน SLA รวม 72 ชม.
+        <div
+            class="bg-surface-container-lowest rounded-xl border border-[#E2E8F0] p-6 sm:p-7 shadow-[0_1px_2px_0_rgba(15,23,42,0.04)]">
+            <div
+                class="flex flex-col sm:flex-row sm:items-center justify-between pb-6 border-b border-[#E2E8F0] mb-6 gap-2">
+                <div>
+                    <h2 class="text-headline-md font-headline-md text-on-surface flex items-center gap-2">
+                        <span class="material-symbols-outlined text-primary text-[22px]" data-icon="route">route</span>
+                        เส้นทางการเดินทางของเรื่อง (Routing Workflow)
+                    </h2>
+                    <p class="text-on-surface-variant font-body-sm text-body-sm mt-0.5">
+                        ติดตามสถานะและหน่วยงานผู้รับผิดชอบตามวงจรการแก้ปัญหาภาครัฐ
+                    </p>
+                </div>
+                <div class="inline-flex items-center gap-1 text-label-sm font-label-sm text-outline">
+                    <span class="material-symbols-outlined text-[16px]" data-icon="schedule">schedule</span>
+                    เวลามาตรฐาน SLA รวม 72 ชม.
+                </div>
+            </div>
+            <!-- Stepper Container -->
+            <div
+                class="relative space-y-8 before:absolute before:left-[118px] sm:before:left-[140px] before:top-2 before:bottom-2 before:w-[2px] before:bg-[#E2E8F0]">
+                <div class="relative flex items-start gap-4 sm:gap-6">
+                    <div class="w-[102px] sm:w-[116px] flex-shrink-0 text-right pt-2">
+                        <div class="font-code-sm text-xs font-semibold text-primary leading-tight">12 ต.ค. 2567</div>
+                        <div class="font-code-sm text-[11px] text-outline mt-0.5">ปัจจุบัน (14:30 น.)</div>
+                    </div>
+                    <div class="relative flex-shrink-0 z-10 top-2 -ml-[19px] sm:-ml-[21px]">
+                        <div
+                            class="w-6 h-6 rounded-full bg-secondary flex items-center justify-center text-on-secondary ring-4 ring-secondary/20 shadow-sm animate-pulse">
+                            <span class="w-2.5 h-2.5 rounded-full bg-white"></span></div>
+                    </div>
+                    <div
+                        class="flex-1 min-w-0 bg-gradient-to-br from-[#EFF6FF] via-white to-[#F0F9FF] rounded-xl p-5 sm:p-6 border-2 border-secondary/40 shadow-[0_4px_12px_-2px_rgba(37,99,235,0.08)]">
+                        <div class="flex flex-wrap items-center justify-between gap-2 mb-3.5"><span
+                                class="px-3 py-1 rounded-md text-xs font-semibold bg-secondary text-white uppercase tracking-wider flex items-center gap-1.5 shadow-sm"><span
+                                    class="material-symbols-outlined text-[15px]"
+                                    data-icon="near_me">near_me</span>ตำแหน่งปัจจุบันของเรื่อง (CURRENT
+                                AGENCY)</span><span
+                                class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-[#FFFBEB] text-[#92400E] border border-[#FDE68A]"><span
+                                    class="w-1.5 h-1.5 rounded-full bg-[#F59E0B] animate-ping"></span>กำลังปฏิบัติงานในพื้นที่</span>
+                        </div>
+                        <div class="space-y-1 mb-4">
+                            <div
+                                class="text-xs font-label-md text-on-surface-variant uppercase tracking-wider flex items-center gap-1">
+                                <span class="material-symbols-outlined text-[14px] text-secondary"
+                                    data-icon="apartment">apartment</span>เรื่องอยู่ที่หน่วยงาน:</div>
+                            <h3 class="text-headline-md font-headline-md font-bold text-primary tracking-tight">
+                                ฝ่ายการโยธา สำนักงานเขตคลองเตย</h3>
+                        </div>
+                        <div
+                            class="bg-white/90 backdrop-blur-sm rounded-xl p-4 border border-[#BFDBFE] space-y-3 shadow-sm">
+                            <div class="flex items-start gap-3">
+                                <div
+                                    class="w-8 h-8 rounded-lg bg-[#EFF6FF] text-secondary flex items-center justify-center flex-shrink-0 mt-0.5 border border-[#DBEAFE]">
+                                    <span class="material-symbols-outlined text-[20px]"
+                                        data-icon="engineering">engineering</span></div>
+                                <div class="flex-grow">
+                                    <div class="text-xs font-semibold text-outline uppercase tracking-wider">
+                                        สถานะการดำเนินงาน:</div>
+                                    <div class="text-body-md font-semibold text-[#0F172A] mt-0.5">
+                                        อยู่ระหว่างลงพื้นที่ปฏิบัติงานลอกท่อระบายน้ำและสูบน้ำ</div>
+                                    <div class="text-body-sm text-on-surface-variant mt-1 leading-relaxed">
+                                        ทีมช่างชุดปฏิบัติการที่ 2
+                                        ได้รับมอบหมายและกำลังนำเครื่องจักรดูดโคลนเข้าเคลียร์ขยะอุดตันปากท่อ</div>
+                                </div>
+                            </div>
+                            <div
+                                class="pt-3 border-t border-[#E2E8F0] flex flex-wrap items-center justify-between gap-2">
+                                <div class="flex items-center gap-1.5 text-xs text-[#065F46] font-medium"><span
+                                        class="material-symbols-outlined text-[16px] text-[#10B981]"
+                                        data-icon="alarm">alarm</span><span class="">กำหนดแล้วเสร็จตาม SLA: <strong
+                                            class="font-bold text-primary">ภายใน 15 ต.ค. 2567</strong></span></div>
+                                <div
+                                    class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-[#FEF2F2] border border-[#FECACA] text-xs font-bold text-[#DC2626]">
+                                    <span class="material-symbols-outlined text-[14px]"
+                                        data-icon="hourglass_top">hourglass_top</span>เหลือเวลาดำเนินการ 2 วัน</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative flex items-center -my-3">
+                    <div class="w-[102px] sm:w-[116px] flex-shrink-0"></div>
+                    <div class="relative z-10 -ml-[19px] sm:-ml-[21px] pl-7 sm:pl-8">
+                        <div
+                            class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-[11px] bg-surface-container-low border border-outline-variant text-outline shadow-sm leading-tight whitespace-nowrap">
+                            <span
+                                class="text-[10px] text-on-surface-variant font-label-sm">ระยะเวลาดำเนินการ:</span><span
+                                class="font-bold text-primary text-[11px]">1 ชม. 00 นาที</span></div>
+                    </div>
+                </div>
+                <div class="relative group flex items-start gap-4 sm:gap-6">
+                    <div class="w-[102px] sm:w-[116px] flex-shrink-0 text-right pt-2">
+                        <div class="font-code-sm text-xs font-semibold text-primary leading-tight">12 ต.ค. 2567</div>
+                        <div class="font-code-sm text-[11px] text-outline mt-0.5">13:30 น.</div>
+                    </div>
+                    <div class="relative flex-shrink-0 z-10 top-1.5 -ml-[19px] sm:-ml-[21px]">
+                        <div
+                            class="w-6 h-6 rounded-full bg-primary flex items-center justify-center text-on-primary ring-4 ring-white shadow-sm transition-transform duration-150 group-hover:scale-105">
+                            <span class="material-symbols-outlined text-[14px]" data-icon="check">check</span></div>
+                    </div>
+                    <div
+                        class="flex-1 min-w-0 bg-surface-container-lowest hover:bg-surface-container-low/40 rounded-xl p-4 sm:p-4.5 border border-[#E2E8F0] shadow-[0_1px_2px_0_rgba(15,23,42,0.03)] transition-all">
+                        <div class="flex flex-wrap items-center gap-2 pb-2.5 border-b border-[#F1F5F9]"><span
+                                class="px-2 py-0.5 rounded text-xs font-bold bg-primary text-on-primary tracking-tight font-label-sm">ขั้นตอนที่
+                                7</span>
+                            <h3 class="text-body-md font-semibold text-on-surface">รับเรื่อง</h3><span
+                                class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-medium bg-[#ECFDF5] text-[#065F46] border border-[#A7F3D0]"><span
+                                    class="w-1.5 h-1.5 rounded-full bg-[#10B981]"></span>รับเรื่องแล้ว</span>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5 pt-2.5 text-xs text-on-surface-variant">
+                            <div><span class="text-outline font-label-sm block">ช่องทาง:</span><span
+                                    class="font-medium text-primary flex items-center gap-1 mt-0.5"><span
+                                        class="w-1.5 h-1.5 rounded-full bg-[#2563EB]"></span>Traffy Fondue</span></div>
+                            <div><span class="text-outline font-label-sm block">เลขรับเรื่อง:</span><span
+                                    class="font-code-sm text-primary font-bold bg-surface-container-low px-1.5 py-0.5 rounded border border-outline-variant inline-block mt-0.5">REC-69-00123</span>
+                            </div>
+                            <div><span class="text-outline font-label-sm block">ผู้ดำเนินการ:</span><span
+                                    class="text-on-surface font-medium block mt-0.5">ฝ่ายการโยธา
+                                    สำนักงานเขตคลองเตย</span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative flex items-center -my-3">
+                    <div class="w-[102px] sm:w-[116px] flex-shrink-0"></div>
+                    <div class="relative z-10 -ml-[19px] sm:-ml-[21px] pl-7 sm:pl-8">
+                        <div
+                            class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-[11px] bg-surface-container-low border border-outline-variant text-outline shadow-sm leading-tight whitespace-nowrap">
+                            <span
+                                class="text-[10px] text-on-surface-variant font-label-sm">ระยะเวลาดำเนินการ:</span><span
+                                class="font-bold text-primary text-[11px]">20 นาที</span></div>
+                    </div>
+                </div>
+                <div class="relative group flex items-start gap-4 sm:gap-6">
+                    <div class="w-[102px] sm:w-[116px] flex-shrink-0 text-right pt-2">
+                        <div class="font-code-sm text-xs font-semibold text-primary leading-tight">12 ต.ค. 2567</div>
+                        <div class="font-code-sm text-[11px] text-outline mt-0.5">13:10 น.</div>
+                    </div>
+                    <div class="relative flex-shrink-0 z-10 top-1.5 -ml-[19px] sm:-ml-[21px]">
+                        <div
+                            class="w-6 h-6 rounded-full bg-primary flex items-center justify-center text-on-primary ring-4 ring-white shadow-sm transition-transform duration-150 group-hover:scale-105">
+                            <span class="material-symbols-outlined text-[14px]" data-icon="check">check</span></div>
+                    </div>
+                    <div
+                        class="flex-1 min-w-0 bg-surface-container-lowest hover:bg-surface-container-low/40 rounded-xl p-4 sm:p-4.5 border border-[#E2E8F0] shadow-[0_1px_2px_0_rgba(15,23,42,0.03)] transition-all">
+                        <div class="flex flex-wrap items-center gap-2 pb-2.5 border-b border-[#F1F5F9]"><span
+                                class="px-2 py-0.5 rounded text-xs font-bold bg-primary text-on-primary tracking-tight font-label-sm">ขั้นตอนที่
+                                6</span>
+                            <h3 class="text-body-md font-semibold text-on-surface">ส่งเรื่องและส่งต่อหน่วยงาน</h3><span
+                                class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-medium bg-[#ECFDF5] text-[#065F46] border border-[#A7F3D0]"><span
+                                    class="w-1.5 h-1.5 rounded-full bg-[#10B981]"></span>ส่งออกสำเร็จ</span>
+                        </div>
+                        <div class="grid grid-cols-1 gap-2.5 pt-2.5 text-xs text-on-surface-variant md:grid-cols-2">
+                            <div><span class="text-outline font-label-sm block">ส่งต่อ:</span><span
+                                    class="font-medium text-primary block mt-0.5">ฝ่ายการโยธา สำนักงานเขตคลองเตย</span>
+                            </div>
+                            <div><span class="text-outline font-label-sm block">ช่องทาง:</span><span
+                                    class="font-medium text-primary flex items-center gap-1 mt-0.5"><span
+                                        class="w-1.5 h-1.5 rounded-full bg-[#2563EB]"></span>Traffy Fondue</span></div>
+                            <div><span class="text-outline font-label-sm block">เลขส่งเรื่อง:</span><span
+                                    class="font-code-sm text-primary font-bold bg-surface-container-low px-1.5 py-0.5 rounded border border-outline-variant inline-block mt-0.5">DISP-69-04423</span>
+                            </div>
+                            <div><span class="text-outline font-label-sm block">ผู้ดำเนินการ:</span><span
+                                    class="text-on-surface font-medium block mt-0.5">สำนักงานเขตคลองเตย</span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative flex items-center -my-3">
+                    <div class="w-[102px] sm:w-[116px] flex-shrink-0"></div>
+                    <div class="relative z-10 -ml-[19px] sm:-ml-[21px] pl-7 sm:pl-8">
+                        <div
+                            class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-[11px] bg-surface-container-low border border-outline-variant text-outline shadow-sm leading-tight whitespace-nowrap">
+                            <span
+                                class="text-[10px] text-on-surface-variant font-label-sm">ระยะเวลาดำเนินการ:</span><span
+                                class="font-bold text-primary text-[11px]">1 ชม. 25 นาที</span></div>
+                    </div>
+                </div>
+                <div class="relative group flex items-start gap-4 sm:gap-6">
+                    <div class="w-[102px] sm:w-[116px] flex-shrink-0 text-right pt-2">
+                        <div class="font-code-sm text-xs font-semibold text-primary leading-tight">12 ต.ค. 2567</div>
+                        <div class="font-code-sm text-[11px] text-outline mt-0.5">11:45 น.</div>
+                    </div>
+                    <div class="relative flex-shrink-0 z-10 top-1.5 -ml-[19px] sm:-ml-[21px]">
+                        <div
+                            class="w-6 h-6 rounded-full bg-primary flex items-center justify-center text-on-primary ring-4 ring-white shadow-sm transition-transform duration-150 group-hover:scale-105">
+                            <span class="material-symbols-outlined text-[14px]" data-icon="check">check</span></div>
+                    </div>
+                    <div
+                        class="flex-1 min-w-0 bg-surface-container-lowest hover:bg-surface-container-low/40 rounded-xl p-4 sm:p-4.5 border border-[#E2E8F0] shadow-[0_1px_2px_0_rgba(15,23,42,0.03)] transition-all">
+                        <div class="flex flex-wrap items-center gap-2 pb-2.5 border-b border-[#F1F5F9]"><span
+                                class="px-2 py-0.5 rounded text-xs font-bold bg-primary text-on-primary tracking-tight font-label-sm">ขั้นตอนที่
+                                5</span>
+                            <h3 class="text-body-md font-semibold text-on-surface">รับเรื่อง</h3><span
+                                class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-medium bg-[#ECFDF5] text-[#065F46] border border-[#A7F3D0]"><span
+                                    class="w-1.5 h-1.5 rounded-full bg-[#10B981]"></span>รับเรื่องแล้ว</span>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5 pt-2.5 text-xs text-on-surface-variant">
+                            <div><span class="text-outline font-label-sm block">ช่องทาง:</span><span
+                                    class="font-medium text-primary flex items-center gap-1 mt-0.5"><span
+                                        class="w-1.5 h-1.5 rounded-full bg-[#2563EB]"></span>Traffy Fondue</span></div>
+                            <div><span class="text-outline font-label-sm block">เลขรับเรื่อง:</span><span
+                                    class="font-code-sm text-primary font-bold bg-surface-container-low px-1.5 py-0.5 rounded border border-outline-variant inline-block mt-0.5">REC-69-00123</span>
+                            </div>
+                            <div><span class="text-outline font-label-sm block">ผู้ดำเนินการ:</span><span
+                                    class="text-on-surface font-medium block mt-0.5">สำนักงานเขตคลองเตย</span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative flex items-center -my-3">
+                    <div class="w-[102px] sm:w-[116px] flex-shrink-0"></div>
+                    <div class="relative z-10 -ml-[19px] sm:-ml-[21px] pl-7 sm:pl-8">
+                        <div
+                            class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-[11px] bg-surface-container-low border border-outline-variant text-outline shadow-sm leading-tight whitespace-nowrap">
+                            <span
+                                class="text-[10px] text-on-surface-variant font-label-sm">ระยะเวลาดำเนินการ:</span><span
+                                class="font-bold text-primary text-[11px]">25 นาที</span></div>
+                    </div>
+                </div>
+                <div class="relative group flex items-start gap-4 sm:gap-6">
+                    <div class="w-[102px] sm:w-[116px] flex-shrink-0 text-right pt-2">
+                        <div class="font-code-sm text-xs font-semibold text-primary leading-tight">12 ต.ค. 2567</div>
+                        <div class="font-code-sm text-[11px] text-outline mt-0.5">11:20 น.</div>
+                    </div>
+                    <div class="relative flex-shrink-0 z-10 top-1.5 -ml-[19px] sm:-ml-[21px]">
+                        <div
+                            class="w-6 h-6 rounded-full bg-primary flex items-center justify-center text-on-primary ring-4 ring-white shadow-sm transition-transform duration-150 group-hover:scale-105">
+                            <span class="material-symbols-outlined text-[14px]" data-icon="check">check</span></div>
+                    </div>
+                    <div
+                        class="flex-1 min-w-0 bg-surface-container-lowest hover:bg-surface-container-low/40 rounded-xl p-4 sm:p-4.5 border border-[#E2E8F0] shadow-[0_1px_2px_0_rgba(15,23,42,0.03)] transition-all">
+                        <div class="flex flex-wrap items-center gap-2 pb-2.5 border-b border-[#F1F5F9]"><span
+                                class="px-2 py-0.5 rounded text-xs font-bold bg-primary text-on-primary tracking-tight font-label-sm">ขั้นตอนที่
+                                4</span>
+                            <h3 class="text-body-md font-semibold text-on-surface">ส่งเรื่องและส่งต่อหน่วยงาน</h3><span
+                                class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-medium bg-[#ECFDF5] text-[#065F46] border border-[#A7F3D0]"><span
+                                    class="w-1.5 h-1.5 rounded-full bg-[#10B981]"></span>ส่งออกสำเร็จ</span>
+                        </div>
+                        <div class="grid grid-cols-1 gap-2.5 pt-2.5 text-xs text-on-surface-variant md:grid-cols-2">
+                            <div><span class="text-outline font-label-sm block">ส่งต่อ:</span><span
+                                    class="font-medium text-primary block mt-0.5">สำนักงานเขตคลองเตย</span></div>
+                            <div><span class="text-outline font-label-sm block">ช่องทาง:</span><span
+                                    class="font-medium text-primary flex items-center gap-1 mt-0.5"><span
+                                        class="w-1.5 h-1.5 rounded-full bg-[#2563EB]"></span>Traffy Fondue</span></div>
+                            <div><span class="text-outline font-label-sm block">เลขส่งเรื่อง:</span><span
+                                    class="font-code-sm text-primary font-bold bg-surface-container-low px-1.5 py-0.5 rounded border border-outline-variant inline-block mt-0.5">DISP-69-04422</span>
+                            </div>
+                            <div><span class="text-outline font-label-sm block">ผู้ดำเนินการ:</span><span
+                                    class="text-on-surface font-medium block mt-0.5">ปลัดกรุงเทพมหานคร</span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative flex items-center -my-3">
+                    <div class="w-[102px] sm:w-[116px] flex-shrink-0"></div>
+                    <div class="relative z-10 -ml-[19px] sm:-ml-[21px] pl-7 sm:pl-8">
+                        <div
+                            class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-[11px] bg-surface-container-low border border-outline-variant text-outline shadow-sm leading-tight whitespace-nowrap">
+                            <span
+                                class="text-[10px] text-on-surface-variant font-label-sm">ระยะเวลาดำเนินการ:</span><span
+                                class="font-bold text-primary text-[11px]">20 นาที</span></div>
+                    </div>
+                </div>
+                <div class="relative group flex items-start gap-4 sm:gap-6">
+                    <div class="w-[102px] sm:w-[116px] flex-shrink-0 text-right pt-2">
+                        <div class="font-code-sm text-xs font-semibold text-primary leading-tight">12 ต.ค. 2567</div>
+                        <div class="font-code-sm text-[11px] text-outline mt-0.5">11:00 น.</div>
+                    </div>
+                    <div class="relative flex-shrink-0 z-10 top-1.5 -ml-[19px] sm:-ml-[21px]">
+                        <div
+                            class="w-6 h-6 rounded-full bg-primary flex items-center justify-center text-on-primary ring-4 ring-white shadow-sm transition-transform duration-150 group-hover:scale-105">
+                            <span class="material-symbols-outlined text-[14px]" data-icon="check">check</span></div>
+                    </div>
+                    <div
+                        class="flex-1 min-w-0 bg-surface-container-lowest hover:bg-surface-container-low/40 rounded-xl p-4 sm:p-4.5 border border-[#E2E8F0] shadow-[0_1px_2px_0_rgba(15,23,42,0.03)] transition-all">
+                        <div class="flex flex-wrap items-center gap-2 pb-2.5 border-b border-[#F1F5F9]"><span
+                                class="px-2 py-0.5 rounded text-xs font-bold bg-primary text-on-primary tracking-tight font-label-sm">ขั้นตอนที่
+                                3</span>
+                            <h3 class="text-body-md font-semibold text-on-surface">รับเรื่อง</h3><span
+                                class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-medium bg-[#ECFDF5] text-[#065F46] border border-[#A7F3D0]"><span
+                                    class="w-1.5 h-1.5 rounded-full bg-[#10B981]"></span>รับเรื่องแล้ว</span>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5 pt-2.5 text-xs text-on-surface-variant">
+                            <div><span class="text-outline font-label-sm block">ช่องทาง:</span><span
+                                    class="font-medium text-primary flex items-center gap-1 mt-0.5"><span
+                                        class="w-1.5 h-1.5 rounded-full bg-[#2563EB]"></span>Traffy Fondue</span></div>
+                            <div><span class="text-outline font-label-sm block">เลขรับเรื่อง:</span><span
+                                    class="font-code-sm text-primary font-bold bg-surface-container-low px-1.5 py-0.5 rounded border border-outline-variant inline-block mt-0.5">REC-69-00123</span>
+                            </div>
+                            <div><span class="text-outline font-label-sm block">ผู้ดำเนินการ:</span><span
+                                    class="text-on-surface font-medium block mt-0.5">ปลัดกรุงเทพมหานคร</span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative flex items-center -my-3">
+                    <div class="w-[102px] sm:w-[116px] flex-shrink-0"></div>
+                    <div class="relative z-10 -ml-[19px] sm:-ml-[21px] pl-7 sm:pl-8">
+                        <div
+                            class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-[11px] bg-surface-container-low border border-outline-variant text-outline shadow-sm leading-tight whitespace-nowrap">
+                            <span
+                                class="text-[10px] text-on-surface-variant font-label-sm">ระยะเวลาดำเนินการ:</span><span
+                                class="font-bold text-primary text-[11px]">30 นาที</span></div>
+                    </div>
+                </div>
+                <div class="relative group flex items-start gap-4 sm:gap-6">
+                    <div class="w-[102px] sm:w-[116px] flex-shrink-0 text-right pt-2">
+                        <div class="font-code-sm text-xs font-semibold text-primary leading-tight">12 ต.ค. 2567</div>
+                        <div class="font-code-sm text-[11px] text-outline mt-0.5">10:30 น.</div>
+                    </div>
+                    <div class="relative flex-shrink-0 z-10 top-1.5 -ml-[19px] sm:-ml-[21px]">
+                        <div
+                            class="w-6 h-6 rounded-full bg-primary flex items-center justify-center text-on-primary ring-4 ring-white shadow-sm transition-transform duration-150 group-hover:scale-105">
+                            <span class="material-symbols-outlined text-[14px]" data-icon="check">check</span></div>
+                    </div>
+                    <div
+                        class="flex-1 min-w-0 bg-surface-container-lowest hover:bg-surface-container-low/40 rounded-xl p-4 sm:p-4.5 border border-[#E2E8F0] shadow-[0_1px_2px_0_rgba(15,23,42,0.03)] transition-all">
+                        <div class="flex flex-wrap items-center gap-2 pb-2.5 border-b border-[#F1F5F9]"><span
+                                class="px-2 py-0.5 rounded text-xs font-bold bg-primary text-on-primary tracking-tight font-label-sm">ขั้นตอนที่
+                                2</span>
+                            <h3 class="text-body-md font-semibold text-on-surface">ส่งเรื่องและส่งต่อหน่วยงาน</h3><span
+                                class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-medium bg-[#ECFDF5] text-[#065F46] border border-[#A7F3D0]"><span
+                                    class="w-1.5 h-1.5 rounded-full bg-[#10B981]"></span>ส่งออกสำเร็จ</span>
+                        </div>
+                        <div class="grid grid-cols-1 gap-2.5 pt-2.5 text-xs text-on-surface-variant md:grid-cols-2">
+                            <div><span class="text-outline font-label-sm block">ส่งต่อ:</span><span
+                                    class="font-medium text-primary block mt-0.5">ปลัดกรุงเทพมหานคร</span></div>
+                            <div><span class="text-outline font-label-sm block">ช่องทาง:</span><span
+                                    class="font-medium text-primary flex items-center gap-1 mt-0.5"><span
+                                        class="w-1.5 h-1.5 rounded-full bg-[#2563EB]"></span>Traffy Fondue</span></div>
+                            <div><span class="text-outline font-label-sm block">เลขส่งเรื่อง:</span><span
+                                    class="font-code-sm text-primary font-bold bg-surface-container-low px-1.5 py-0.5 rounded border border-outline-variant inline-block mt-0.5">DISP-69-04421</span>
+                            </div>
+                            <div><span class="text-outline font-label-sm block">ผู้ดำเนินการ:</span><span
+                                    class="text-on-surface font-medium block mt-0.5">สำนักงานเลขานุการผู้ว่าราชการกรุงเทพมหานคร</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative flex items-center -my-3">
+                    <div class="w-[102px] sm:w-[116px] flex-shrink-0"></div>
+                    <div class="relative z-10 -ml-[19px] sm:-ml-[21px] pl-7 sm:pl-8">
+                        <div
+                            class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-[11px] bg-surface-container-low border border-outline-variant text-outline shadow-sm leading-tight whitespace-nowrap">
+                            <span
+                                class="text-[10px] text-on-surface-variant font-label-sm">ระยะเวลาดำเนินการ:</span><span
+                                class="font-bold text-primary text-[11px]">1 ชม. 15 นาที</span></div>
+                    </div>
+                </div>
+                <div class="relative group flex items-start gap-4 sm:gap-6">
+                    <div class="w-[102px] sm:w-[116px] flex-shrink-0 text-right pt-2">
+                        <div class="font-code-sm text-xs font-semibold text-primary leading-tight">12 ต.ค. 2567</div>
+                        <div class="font-code-sm text-[11px] text-outline mt-0.5">09:15 น.</div>
+                    </div>
+                    <div class="relative flex-shrink-0 z-10 top-1.5 -ml-[19px] sm:-ml-[21px]">
+                        <div
+                            class="w-6 h-6 rounded-full bg-primary flex items-center justify-center text-on-primary ring-4 ring-white shadow-sm transition-transform duration-150 group-hover:scale-105">
+                            <span class="material-symbols-outlined text-[14px]" data-icon="check">check</span></div>
+                    </div>
+                    <div
+                        class="flex-1 min-w-0 bg-surface-container-lowest hover:bg-surface-container-low/40 rounded-xl p-4 sm:p-4.5 border border-[#E2E8F0] shadow-[0_1px_2px_0_rgba(15,23,42,0.03)] transition-all">
+                        <div class="flex flex-wrap items-center gap-2 pb-2.5 border-b border-[#F1F5F9]"><span
+                                class="px-2 py-0.5 rounded text-xs font-bold bg-primary text-on-primary tracking-tight font-label-sm">ขั้นตอนที่
+                                1</span>
+                            <h3 class="text-body-md font-semibold text-on-surface">รับเรื่อง</h3><span
+                                class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-medium bg-[#ECFDF5] text-[#065F46] border border-[#A7F3D0]"><span
+                                    class="w-1.5 h-1.5 rounded-full bg-[#10B981]"></span>บันทึกเข้าระบบแล้ว</span>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5 pt-2.5 text-xs text-on-surface-variant">
+                            <div><span class="text-outline font-label-sm block">ช่องทาง:</span><span
+                                    class="font-medium text-primary flex items-center gap-1 mt-0.5"><span
+                                        class="w-1.5 h-1.5 rounded-full bg-[#2563EB]"></span>Traffy Fondue</span></div>
+                            <div><span class="text-outline font-label-sm block">เลขรับเรื่อง:</span><span
+                                    class="font-code-sm text-primary font-bold bg-surface-container-low px-1.5 py-0.5 rounded border border-outline-variant inline-block mt-0.5">REC-69-00123</span>
+                            </div>
+                            <div><span class="text-outline font-label-sm block">ผู้ดำเนินการ:</span><span
+                                    class="text-on-surface font-medium block mt-0.5">สำนักงานเลขานุการผู้ว่าราชการกรุงเทพมหานคร</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-</div>
-<!-- Stepper Container -->
-<div class="relative space-y-8 before:absolute before:left-[118px] sm:before:left-[140px] before:top-2 before:bottom-2 before:w-[2px] before:bg-[#E2E8F0]"><div class="relative flex items-start gap-4 sm:gap-6"><div class="w-[102px] sm:w-[116px] flex-shrink-0 text-right pt-2"><div class="font-code-sm text-xs font-semibold text-primary leading-tight">12 ต.ค. 2567</div><div class="font-code-sm text-[11px] text-outline mt-0.5">ปัจจุบัน (14:30 น.)</div></div><div class="relative flex-shrink-0 z-10 top-2 -ml-[19px] sm:-ml-[21px]"><div class="w-6 h-6 rounded-full bg-secondary flex items-center justify-center text-on-secondary ring-4 ring-secondary/20 shadow-sm animate-pulse"><span class="w-2.5 h-2.5 rounded-full bg-white"></span></div></div><div class="flex-1 min-w-0 bg-gradient-to-br from-[#EFF6FF] via-white to-[#F0F9FF] rounded-xl p-5 sm:p-6 border-2 border-secondary/40 shadow-[0_4px_12px_-2px_rgba(37,99,235,0.08)]"><div class="flex flex-wrap items-center justify-between gap-2 mb-3.5"><span class="px-3 py-1 rounded-md text-xs font-semibold bg-secondary text-white uppercase tracking-wider flex items-center gap-1.5 shadow-sm"><span class="material-symbols-outlined text-[15px]" data-icon="near_me">near_me</span>ตำแหน่งปัจจุบันของเรื่อง (CURRENT AGENCY)</span><span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-[#FFFBEB] text-[#92400E] border border-[#FDE68A]"><span class="w-1.5 h-1.5 rounded-full bg-[#F59E0B] animate-ping"></span>กำลังปฏิบัติงานในพื้นที่</span></div><div class="space-y-1 mb-4"><div class="text-xs font-label-md text-on-surface-variant uppercase tracking-wider flex items-center gap-1"><span class="material-symbols-outlined text-[14px] text-secondary" data-icon="apartment">apartment</span>เรื่องอยู่ที่หน่วยงาน:</div><h3 class="text-headline-md font-headline-md font-bold text-primary tracking-tight">ฝ่ายการโยธา สำนักงานเขตคลองเตย</h3></div><div class="bg-white/90 backdrop-blur-sm rounded-xl p-4 border border-[#BFDBFE] space-y-3 shadow-sm"><div class="flex items-start gap-3"><div class="w-8 h-8 rounded-lg bg-[#EFF6FF] text-secondary flex items-center justify-center flex-shrink-0 mt-0.5 border border-[#DBEAFE]"><span class="material-symbols-outlined text-[20px]" data-icon="engineering">engineering</span></div><div class="flex-grow"><div class="text-xs font-semibold text-outline uppercase tracking-wider">สถานะการดำเนินงาน:</div><div class="text-body-md font-semibold text-[#0F172A] mt-0.5">อยู่ระหว่างลงพื้นที่ปฏิบัติงานลอกท่อระบายน้ำและสูบน้ำ</div><div class="text-body-sm text-on-surface-variant mt-1 leading-relaxed">ทีมช่างชุดปฏิบัติการที่ 2 ได้รับมอบหมายและกำลังนำเครื่องจักรดูดโคลนเข้าเคลียร์ขยะอุดตันปากท่อ</div></div></div><div class="pt-3 border-t border-[#E2E8F0] flex flex-wrap items-center justify-between gap-2"><div class="flex items-center gap-1.5 text-xs text-[#065F46] font-medium"><span class="material-symbols-outlined text-[16px] text-[#10B981]" data-icon="alarm">alarm</span><span class="">กำหนดแล้วเสร็จตาม SLA: <strong class="font-bold text-primary">ภายใน 15 ต.ค. 2567</strong></span></div><div class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-[#FEF2F2] border border-[#FECACA] text-xs font-bold text-[#DC2626]"><span class="material-symbols-outlined text-[14px]" data-icon="hourglass_top">hourglass_top</span>เหลือเวลาดำเนินการ 2 วัน</div></div></div></div></div><div class="relative flex items-center -my-3"><div class="w-[102px] sm:w-[116px] flex-shrink-0"></div><div class="relative z-10 -ml-[19px] sm:-ml-[21px] pl-7 sm:pl-8"><div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-[11px] bg-surface-container-low border border-outline-variant text-outline shadow-sm leading-tight whitespace-nowrap"><span class="text-[10px] text-on-surface-variant font-label-sm">ระยะเวลาดำเนินการ:</span><span class="font-bold text-primary text-[11px]">1 ชม. 00 นาที</span></div></div></div><div class="relative group flex items-start gap-4 sm:gap-6"><div class="w-[102px] sm:w-[116px] flex-shrink-0 text-right pt-2"><div class="font-code-sm text-xs font-semibold text-primary leading-tight">12 ต.ค. 2567</div><div class="font-code-sm text-[11px] text-outline mt-0.5">13:30 น.</div></div><div class="relative flex-shrink-0 z-10 top-1.5 -ml-[19px] sm:-ml-[21px]"><div class="w-6 h-6 rounded-full bg-primary flex items-center justify-center text-on-primary ring-4 ring-white shadow-sm transition-transform duration-150 group-hover:scale-105"><span class="material-symbols-outlined text-[14px]" data-icon="check">check</span></div></div><div class="flex-1 min-w-0 bg-surface-container-lowest hover:bg-surface-container-low/40 rounded-xl p-4 sm:p-4.5 border border-[#E2E8F0] shadow-[0_1px_2px_0_rgba(15,23,42,0.03)] transition-all"><div class="flex flex-wrap items-center gap-2 pb-2.5 border-b border-[#F1F5F9]"><span class="px-2 py-0.5 rounded text-xs font-bold bg-primary text-on-primary tracking-tight font-label-sm">ขั้นตอนที่ 7</span><h3 class="text-body-md font-semibold text-on-surface">รับเรื่อง</h3><span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-medium bg-[#ECFDF5] text-[#065F46] border border-[#A7F3D0]"><span class="w-1.5 h-1.5 rounded-full bg-[#10B981]"></span>รับเรื่องแล้ว</span></div><div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5 pt-2.5 text-xs text-on-surface-variant"><div><span class="text-outline font-label-sm block">ช่องทาง:</span><span class="font-medium text-primary flex items-center gap-1 mt-0.5"><span class="w-1.5 h-1.5 rounded-full bg-[#2563EB]"></span>Traffy Fondue</span></div><div><span class="text-outline font-label-sm block">เลขรับเรื่อง:</span><span class="font-code-sm text-primary font-bold bg-surface-container-low px-1.5 py-0.5 rounded border border-outline-variant inline-block mt-0.5">REC-69-00123</span></div><div><span class="text-outline font-label-sm block">ผู้ดำเนินการ:</span><span class="text-on-surface font-medium block mt-0.5">ฝ่ายการโยธา สำนักงานเขตคลองเตย</span></div></div></div></div><div class="relative flex items-center -my-3"><div class="w-[102px] sm:w-[116px] flex-shrink-0"></div><div class="relative z-10 -ml-[19px] sm:-ml-[21px] pl-7 sm:pl-8"><div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-[11px] bg-surface-container-low border border-outline-variant text-outline shadow-sm leading-tight whitespace-nowrap"><span class="text-[10px] text-on-surface-variant font-label-sm">ระยะเวลาดำเนินการ:</span><span class="font-bold text-primary text-[11px]">20 นาที</span></div></div></div><div class="relative group flex items-start gap-4 sm:gap-6"><div class="w-[102px] sm:w-[116px] flex-shrink-0 text-right pt-2"><div class="font-code-sm text-xs font-semibold text-primary leading-tight">12 ต.ค. 2567</div><div class="font-code-sm text-[11px] text-outline mt-0.5">13:10 น.</div></div><div class="relative flex-shrink-0 z-10 top-1.5 -ml-[19px] sm:-ml-[21px]"><div class="w-6 h-6 rounded-full bg-primary flex items-center justify-center text-on-primary ring-4 ring-white shadow-sm transition-transform duration-150 group-hover:scale-105"><span class="material-symbols-outlined text-[14px]" data-icon="check">check</span></div></div><div class="flex-1 min-w-0 bg-surface-container-lowest hover:bg-surface-container-low/40 rounded-xl p-4 sm:p-4.5 border border-[#E2E8F0] shadow-[0_1px_2px_0_rgba(15,23,42,0.03)] transition-all"><div class="flex flex-wrap items-center gap-2 pb-2.5 border-b border-[#F1F5F9]"><span class="px-2 py-0.5 rounded text-xs font-bold bg-primary text-on-primary tracking-tight font-label-sm">ขั้นตอนที่ 6</span><h3 class="text-body-md font-semibold text-on-surface">ส่งเรื่องและส่งต่อหน่วยงาน</h3><span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-medium bg-[#ECFDF5] text-[#065F46] border border-[#A7F3D0]"><span class="w-1.5 h-1.5 rounded-full bg-[#10B981]"></span>ส่งออกสำเร็จ</span></div><div class="grid grid-cols-1 gap-2.5 pt-2.5 text-xs text-on-surface-variant md:grid-cols-2"><div><span class="text-outline font-label-sm block">ส่งต่อ:</span><span class="font-medium text-primary block mt-0.5">ฝ่ายการโยธา สำนักงานเขตคลองเตย</span></div><div><span class="text-outline font-label-sm block">ช่องทาง:</span><span class="font-medium text-primary flex items-center gap-1 mt-0.5"><span class="w-1.5 h-1.5 rounded-full bg-[#2563EB]"></span>Traffy Fondue</span></div><div><span class="text-outline font-label-sm block">เลขส่งเรื่อง:</span><span class="font-code-sm text-primary font-bold bg-surface-container-low px-1.5 py-0.5 rounded border border-outline-variant inline-block mt-0.5">DISP-69-04423</span></div><div><span class="text-outline font-label-sm block">ผู้ดำเนินการ:</span><span class="text-on-surface font-medium block mt-0.5">สำนักงานเขตคลองเตย</span></div></div></div></div><div class="relative flex items-center -my-3"><div class="w-[102px] sm:w-[116px] flex-shrink-0"></div><div class="relative z-10 -ml-[19px] sm:-ml-[21px] pl-7 sm:pl-8"><div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-[11px] bg-surface-container-low border border-outline-variant text-outline shadow-sm leading-tight whitespace-nowrap"><span class="text-[10px] text-on-surface-variant font-label-sm">ระยะเวลาดำเนินการ:</span><span class="font-bold text-primary text-[11px]">1 ชม. 25 นาที</span></div></div></div><div class="relative group flex items-start gap-4 sm:gap-6"><div class="w-[102px] sm:w-[116px] flex-shrink-0 text-right pt-2"><div class="font-code-sm text-xs font-semibold text-primary leading-tight">12 ต.ค. 2567</div><div class="font-code-sm text-[11px] text-outline mt-0.5">11:45 น.</div></div><div class="relative flex-shrink-0 z-10 top-1.5 -ml-[19px] sm:-ml-[21px]"><div class="w-6 h-6 rounded-full bg-primary flex items-center justify-center text-on-primary ring-4 ring-white shadow-sm transition-transform duration-150 group-hover:scale-105"><span class="material-symbols-outlined text-[14px]" data-icon="check">check</span></div></div><div class="flex-1 min-w-0 bg-surface-container-lowest hover:bg-surface-container-low/40 rounded-xl p-4 sm:p-4.5 border border-[#E2E8F0] shadow-[0_1px_2px_0_rgba(15,23,42,0.03)] transition-all"><div class="flex flex-wrap items-center gap-2 pb-2.5 border-b border-[#F1F5F9]"><span class="px-2 py-0.5 rounded text-xs font-bold bg-primary text-on-primary tracking-tight font-label-sm">ขั้นตอนที่ 5</span><h3 class="text-body-md font-semibold text-on-surface">รับเรื่อง</h3><span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-medium bg-[#ECFDF5] text-[#065F46] border border-[#A7F3D0]"><span class="w-1.5 h-1.5 rounded-full bg-[#10B981]"></span>รับเรื่องแล้ว</span></div><div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5 pt-2.5 text-xs text-on-surface-variant"><div><span class="text-outline font-label-sm block">ช่องทาง:</span><span class="font-medium text-primary flex items-center gap-1 mt-0.5"><span class="w-1.5 h-1.5 rounded-full bg-[#2563EB]"></span>Traffy Fondue</span></div><div><span class="text-outline font-label-sm block">เลขรับเรื่อง:</span><span class="font-code-sm text-primary font-bold bg-surface-container-low px-1.5 py-0.5 rounded border border-outline-variant inline-block mt-0.5">REC-69-00123</span></div><div><span class="text-outline font-label-sm block">ผู้ดำเนินการ:</span><span class="text-on-surface font-medium block mt-0.5">สำนักงานเขตคลองเตย</span></div></div></div></div><div class="relative flex items-center -my-3"><div class="w-[102px] sm:w-[116px] flex-shrink-0"></div><div class="relative z-10 -ml-[19px] sm:-ml-[21px] pl-7 sm:pl-8"><div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-[11px] bg-surface-container-low border border-outline-variant text-outline shadow-sm leading-tight whitespace-nowrap"><span class="text-[10px] text-on-surface-variant font-label-sm">ระยะเวลาดำเนินการ:</span><span class="font-bold text-primary text-[11px]">25 นาที</span></div></div></div><div class="relative group flex items-start gap-4 sm:gap-6"><div class="w-[102px] sm:w-[116px] flex-shrink-0 text-right pt-2"><div class="font-code-sm text-xs font-semibold text-primary leading-tight">12 ต.ค. 2567</div><div class="font-code-sm text-[11px] text-outline mt-0.5">11:20 น.</div></div><div class="relative flex-shrink-0 z-10 top-1.5 -ml-[19px] sm:-ml-[21px]"><div class="w-6 h-6 rounded-full bg-primary flex items-center justify-center text-on-primary ring-4 ring-white shadow-sm transition-transform duration-150 group-hover:scale-105"><span class="material-symbols-outlined text-[14px]" data-icon="check">check</span></div></div><div class="flex-1 min-w-0 bg-surface-container-lowest hover:bg-surface-container-low/40 rounded-xl p-4 sm:p-4.5 border border-[#E2E8F0] shadow-[0_1px_2px_0_rgba(15,23,42,0.03)] transition-all"><div class="flex flex-wrap items-center gap-2 pb-2.5 border-b border-[#F1F5F9]"><span class="px-2 py-0.5 rounded text-xs font-bold bg-primary text-on-primary tracking-tight font-label-sm">ขั้นตอนที่ 4</span><h3 class="text-body-md font-semibold text-on-surface">ส่งเรื่องและส่งต่อหน่วยงาน</h3><span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-medium bg-[#ECFDF5] text-[#065F46] border border-[#A7F3D0]"><span class="w-1.5 h-1.5 rounded-full bg-[#10B981]"></span>ส่งออกสำเร็จ</span></div><div class="grid grid-cols-1 gap-2.5 pt-2.5 text-xs text-on-surface-variant md:grid-cols-2"><div><span class="text-outline font-label-sm block">ส่งต่อ:</span><span class="font-medium text-primary block mt-0.5">สำนักงานเขตคลองเตย</span></div><div><span class="text-outline font-label-sm block">ช่องทาง:</span><span class="font-medium text-primary flex items-center gap-1 mt-0.5"><span class="w-1.5 h-1.5 rounded-full bg-[#2563EB]"></span>Traffy Fondue</span></div><div><span class="text-outline font-label-sm block">เลขส่งเรื่อง:</span><span class="font-code-sm text-primary font-bold bg-surface-container-low px-1.5 py-0.5 rounded border border-outline-variant inline-block mt-0.5">DISP-69-04422</span></div><div><span class="text-outline font-label-sm block">ผู้ดำเนินการ:</span><span class="text-on-surface font-medium block mt-0.5">ปลัดกรุงเทพมหานคร</span></div></div></div></div><div class="relative flex items-center -my-3"><div class="w-[102px] sm:w-[116px] flex-shrink-0"></div><div class="relative z-10 -ml-[19px] sm:-ml-[21px] pl-7 sm:pl-8"><div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-[11px] bg-surface-container-low border border-outline-variant text-outline shadow-sm leading-tight whitespace-nowrap"><span class="text-[10px] text-on-surface-variant font-label-sm">ระยะเวลาดำเนินการ:</span><span class="font-bold text-primary text-[11px]">20 นาที</span></div></div></div><div class="relative group flex items-start gap-4 sm:gap-6"><div class="w-[102px] sm:w-[116px] flex-shrink-0 text-right pt-2"><div class="font-code-sm text-xs font-semibold text-primary leading-tight">12 ต.ค. 2567</div><div class="font-code-sm text-[11px] text-outline mt-0.5">11:00 น.</div></div><div class="relative flex-shrink-0 z-10 top-1.5 -ml-[19px] sm:-ml-[21px]"><div class="w-6 h-6 rounded-full bg-primary flex items-center justify-center text-on-primary ring-4 ring-white shadow-sm transition-transform duration-150 group-hover:scale-105"><span class="material-symbols-outlined text-[14px]" data-icon="check">check</span></div></div><div class="flex-1 min-w-0 bg-surface-container-lowest hover:bg-surface-container-low/40 rounded-xl p-4 sm:p-4.5 border border-[#E2E8F0] shadow-[0_1px_2px_0_rgba(15,23,42,0.03)] transition-all"><div class="flex flex-wrap items-center gap-2 pb-2.5 border-b border-[#F1F5F9]"><span class="px-2 py-0.5 rounded text-xs font-bold bg-primary text-on-primary tracking-tight font-label-sm">ขั้นตอนที่ 3</span><h3 class="text-body-md font-semibold text-on-surface">รับเรื่อง</h3><span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-medium bg-[#ECFDF5] text-[#065F46] border border-[#A7F3D0]"><span class="w-1.5 h-1.5 rounded-full bg-[#10B981]"></span>รับเรื่องแล้ว</span></div><div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5 pt-2.5 text-xs text-on-surface-variant"><div><span class="text-outline font-label-sm block">ช่องทาง:</span><span class="font-medium text-primary flex items-center gap-1 mt-0.5"><span class="w-1.5 h-1.5 rounded-full bg-[#2563EB]"></span>Traffy Fondue</span></div><div><span class="text-outline font-label-sm block">เลขรับเรื่อง:</span><span class="font-code-sm text-primary font-bold bg-surface-container-low px-1.5 py-0.5 rounded border border-outline-variant inline-block mt-0.5">REC-69-00123</span></div><div><span class="text-outline font-label-sm block">ผู้ดำเนินการ:</span><span class="text-on-surface font-medium block mt-0.5">ปลัดกรุงเทพมหานคร</span></div></div></div></div><div class="relative flex items-center -my-3"><div class="w-[102px] sm:w-[116px] flex-shrink-0"></div><div class="relative z-10 -ml-[19px] sm:-ml-[21px] pl-7 sm:pl-8"><div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-[11px] bg-surface-container-low border border-outline-variant text-outline shadow-sm leading-tight whitespace-nowrap"><span class="text-[10px] text-on-surface-variant font-label-sm">ระยะเวลาดำเนินการ:</span><span class="font-bold text-primary text-[11px]">30 นาที</span></div></div></div><div class="relative group flex items-start gap-4 sm:gap-6"><div class="w-[102px] sm:w-[116px] flex-shrink-0 text-right pt-2"><div class="font-code-sm text-xs font-semibold text-primary leading-tight">12 ต.ค. 2567</div><div class="font-code-sm text-[11px] text-outline mt-0.5">10:30 น.</div></div><div class="relative flex-shrink-0 z-10 top-1.5 -ml-[19px] sm:-ml-[21px]"><div class="w-6 h-6 rounded-full bg-primary flex items-center justify-center text-on-primary ring-4 ring-white shadow-sm transition-transform duration-150 group-hover:scale-105"><span class="material-symbols-outlined text-[14px]" data-icon="check">check</span></div></div><div class="flex-1 min-w-0 bg-surface-container-lowest hover:bg-surface-container-low/40 rounded-xl p-4 sm:p-4.5 border border-[#E2E8F0] shadow-[0_1px_2px_0_rgba(15,23,42,0.03)] transition-all"><div class="flex flex-wrap items-center gap-2 pb-2.5 border-b border-[#F1F5F9]"><span class="px-2 py-0.5 rounded text-xs font-bold bg-primary text-on-primary tracking-tight font-label-sm">ขั้นตอนที่ 2</span><h3 class="text-body-md font-semibold text-on-surface">ส่งเรื่องและส่งต่อหน่วยงาน</h3><span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-medium bg-[#ECFDF5] text-[#065F46] border border-[#A7F3D0]"><span class="w-1.5 h-1.5 rounded-full bg-[#10B981]"></span>ส่งออกสำเร็จ</span></div><div class="grid grid-cols-1 gap-2.5 pt-2.5 text-xs text-on-surface-variant md:grid-cols-2"><div><span class="text-outline font-label-sm block">ส่งต่อ:</span><span class="font-medium text-primary block mt-0.5">ปลัดกรุงเทพมหานคร</span></div><div><span class="text-outline font-label-sm block">ช่องทาง:</span><span class="font-medium text-primary flex items-center gap-1 mt-0.5"><span class="w-1.5 h-1.5 rounded-full bg-[#2563EB]"></span>Traffy Fondue</span></div><div><span class="text-outline font-label-sm block">เลขส่งเรื่อง:</span><span class="font-code-sm text-primary font-bold bg-surface-container-low px-1.5 py-0.5 rounded border border-outline-variant inline-block mt-0.5">DISP-69-04421</span></div><div><span class="text-outline font-label-sm block">ผู้ดำเนินการ:</span><span class="text-on-surface font-medium block mt-0.5">สำนักงานเลขานุการผู้ว่าราชการกรุงเทพมหานคร</span></div></div></div></div><div class="relative flex items-center -my-3"><div class="w-[102px] sm:w-[116px] flex-shrink-0"></div><div class="relative z-10 -ml-[19px] sm:-ml-[21px] pl-7 sm:pl-8"><div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-[11px] bg-surface-container-low border border-outline-variant text-outline shadow-sm leading-tight whitespace-nowrap"><span class="text-[10px] text-on-surface-variant font-label-sm">ระยะเวลาดำเนินการ:</span><span class="font-bold text-primary text-[11px]">1 ชม. 15 นาที</span></div></div></div><div class="relative group flex items-start gap-4 sm:gap-6"><div class="w-[102px] sm:w-[116px] flex-shrink-0 text-right pt-2"><div class="font-code-sm text-xs font-semibold text-primary leading-tight">12 ต.ค. 2567</div><div class="font-code-sm text-[11px] text-outline mt-0.5">09:15 น.</div></div><div class="relative flex-shrink-0 z-10 top-1.5 -ml-[19px] sm:-ml-[21px]"><div class="w-6 h-6 rounded-full bg-primary flex items-center justify-center text-on-primary ring-4 ring-white shadow-sm transition-transform duration-150 group-hover:scale-105"><span class="material-symbols-outlined text-[14px]" data-icon="check">check</span></div></div><div class="flex-1 min-w-0 bg-surface-container-lowest hover:bg-surface-container-low/40 rounded-xl p-4 sm:p-4.5 border border-[#E2E8F0] shadow-[0_1px_2px_0_rgba(15,23,42,0.03)] transition-all"><div class="flex flex-wrap items-center gap-2 pb-2.5 border-b border-[#F1F5F9]"><span class="px-2 py-0.5 rounded text-xs font-bold bg-primary text-on-primary tracking-tight font-label-sm">ขั้นตอนที่ 1</span><h3 class="text-body-md font-semibold text-on-surface">รับเรื่อง</h3><span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-medium bg-[#ECFDF5] text-[#065F46] border border-[#A7F3D0]"><span class="w-1.5 h-1.5 rounded-full bg-[#10B981]"></span>บันทึกเข้าระบบแล้ว</span></div><div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5 pt-2.5 text-xs text-on-surface-variant"><div><span class="text-outline font-label-sm block">ช่องทาง:</span><span class="font-medium text-primary flex items-center gap-1 mt-0.5"><span class="w-1.5 h-1.5 rounded-full bg-[#2563EB]"></span>Traffy Fondue</span></div><div><span class="text-outline font-label-sm block">เลขรับเรื่อง:</span><span class="font-code-sm text-primary font-bold bg-surface-container-low px-1.5 py-0.5 rounded border border-outline-variant inline-block mt-0.5">REC-69-00123</span></div><div><span class="text-outline font-label-sm block">ผู้ดำเนินการ:</span><span class="text-on-surface font-medium block mt-0.5">สำนักงานเลขานุการผู้ว่าราชการกรุงเทพมหานคร</span></div></div></div></div></div>
-</div>
-<!-- Supplementary Quick Action / Citizen Reassurance Strip -->
+        <!-- Supplementary Quick Action / Citizen Reassurance Strip -->
 <div class="bg-surface-container-lowest rounded-xl border border-[#E2E8F0] p-4 flex flex-col sm:flex-row items-center justify-between gap-4 text-body-sm">
 <div class="flex items-center gap-3">
 <div class="w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center text-primary">
